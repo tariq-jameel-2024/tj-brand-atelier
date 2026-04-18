@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>TJ Brand Atelier | Ultra Premium Luxury House</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2305070c'/%3E%3Ctext x='50%25' y='58%25' text-anchor='middle' font-size='36' font-family='Georgia' font-weight='700' fill='%23c5a369'%3ETJ%3C/text%3E%3C/svg%3E">
+  <link rel="alternate icon" type="image/png" href="tjlogo.png">
+  <link rel="apple-touch-icon" href="tjlogo.png">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            atelier: {
+              ink: "#101524",
+              midnight: "#141f36",
+              champagne: "#c5a369",
+              porcelain: "#f6f2ea",
+              smoke: "#d8deea",
+              clay: "#bf7343",
+              pine: "#2f5446"
+            }
+          },
+          boxShadow: {
+            soft: "0 18px 40px rgba(16, 21, 36, 0.14)",
+            luxe: "0 30px 55px rgba(16, 21, 36, 0.18)"
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    :root {
+      --ink: #101524;
+      --champagne: #c5a369;
+      --paper: #f6f2ea;
+      --mist: #d8deea;
+      --success: #0f8e63;
+      --danger: #b54a39;
+      --easing: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    * {
+      font-family: "Manrope", sans-serif;
+      font-feature-settings: "liga" 1, "calt" 1;
+    }
+
+    h1,
+    h2,
+    h3,
+    .font-display {
+      font-family: "Cormorant Garamond", serif;
+      letter-spacing: 0.01em;
+    }
+
+    p,
+    input,
+    textarea,
+    select,
+    button,
+    a {
+      letter-spacing: 0.004em;
+    }
+
+    body {
+      background:
+        radial-gradient(circle at 15% -10%, rgba(197, 163, 105, 0.16) 0%, rgba(197, 163, 105, 0) 45%),
+        radial-gradient(circle at 100% 0%, rgba(20, 31, 54, 0.09) 0%, rgba(20, 31, 54, 0) 45%),
+        linear-gradient(180deg, #fcfaf6 0%, #f3efe7 100%);
+      color: var(--ink);
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    .dark body {
+      background:
+        radial-gradient(circle at 10% -10%, rgba(197, 163, 105, 0.08) 0%, rgba(197, 163, 105, 0) 40%),
+        radial-gradient(circle at 95% 5%, rgba(84, 114, 170, 0.08) 0%, rgba(84, 114, 170, 0) 38%),
+        linear-gradient(180deg, #0f1525 0%, #0a101d 100%);
+      color: #e8edf8;
+    }
+
+    .texture-grid {
+      background-image:
+        linear-gradient(rgba(16, 21, 36, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(16, 21, 36, 0.04) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+
+    .dark .texture-grid {
+      background-image:
+        linear-gradient(rgba(232, 237, 248, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(232, 237, 248, 0.04) 1px, transparent 1px);
+    }
+
+    .nav-shell {
+      backdrop-filter: blur(14px) saturate(130%);
+      background: rgba(20, 31, 54, 0.8);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      transition: box-shadow 0.35s var(--easing), background-color 0.35s var(--easing);
+    }
+
+    .nav-shell.nav-scrolled {
+      box-shadow: 0 18px 34px rgba(0, 0, 0, 0.25);
+      background: rgba(11, 18, 33, 0.9);
+    }
+
+    .brand-mark {
+      width: 2.6rem;
+      height: 2.6rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 28%, #efdbb3 0%, #c5a369 48%, #8c6530 100%);
+      color: #1a2238;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.55), 0 10px 18px rgba(0, 0, 0, 0.28);
+    }
+
+    .brand-logo {
+      width: 3.75rem;
+      height: 3.75rem;
+      min-width: 3.75rem;
+      border-radius: 999px;
+      background: #05070c;
+      object-fit: cover;
+      box-shadow: 0 10px 18px rgba(0, 0, 0, 0.28);
+      padding: 0;
+      border: 1px solid rgba(197, 163, 105, 0.45);
+    }
+
+    .route-link-active {
+      color: #f8dca8 !important;
+    }
+
+    [data-page].is-hidden {
+      display: none;
+    }
+
+    .ui-btn {
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.25s var(--easing), box-shadow 0.25s var(--easing), background-color 0.25s var(--easing), border-color 0.25s var(--easing), color 0.25s var(--easing);
+    }
+
+    .ui-btn::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, transparent 0%, rgba(255, 255, 255, 0.3) 45%, transparent 100%);
+      transform: translateX(-120%);
+      transition: transform 0.45s var(--easing);
+    }
+
+    .ui-btn:hover::after {
+      transform: translateX(120%);
+    }
+
+    .ui-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .ui-btn:active {
+      transform: translateY(0) scale(0.99);
+    }
+
+    .ui-btn:focus-visible,
+    .icon-btn:focus-visible,
+    .chip-btn:focus-visible,
+    .icon-toggle:focus-visible {
+      outline: 2px solid rgba(197, 163, 105, 0.9);
+      outline-offset: 2px;
+    }
+
+    .icon-btn {
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      background: rgba(255, 255, 255, 0.08);
+      color: rgba(255, 255, 255, 0.88);
+      transition: all 0.25s var(--easing);
+    }
+
+    .icon-btn:hover {
+      border-color: rgba(197, 163, 105, 0.85);
+      color: #f8e9ca;
+      transform: translateY(-1px);
+    }
+
+    .card-shell {
+      border: 1px solid rgba(16, 21, 36, 0.08);
+      background: rgba(255, 255, 255, 0.78);
+      backdrop-filter: blur(8px);
+      transition: border-color 0.35s var(--easing), transform 0.35s var(--easing), box-shadow 0.35s var(--easing);
+    }
+
+    .card-shell:hover {
+      border-color: rgba(197, 163, 105, 0.7);
+      transform: translateY(-4px);
+      box-shadow: 0 22px 36px rgba(16, 21, 36, 0.15);
+    }
+
+    .dark .card-shell {
+      border-color: rgba(255, 255, 255, 0.12);
+      background: rgba(21, 31, 54, 0.6);
+    }
+
+    .hero-cover {
+      background:
+        linear-gradient(110deg, rgba(16, 21, 36, 0.88) 0%, rgba(16, 21, 36, 0.55) 45%, rgba(16, 21, 36, 0.86) 100%),
+        url("https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=2200&auto=format&fit=crop");
+      background-size: cover;
+      background-position: center;
+    }
+
+    .hero-intro {
+      opacity: 0;
+      transform: translate3d(0, 28px, 0);
+      animation: heroEntrance 1.15s var(--easing) forwards;
+      animation-delay: 0.1s;
+    }
+
+    @keyframes heroEntrance {
+      0% {
+        opacity: 0;
+        transform: translate3d(0, 28px, 0) scale(0.985);
+      }
+      100% {
+        opacity: 1;
+        transform: translate3d(0, 0, 0) scale(1);
+      }
+    }
+
+    .chip-btn {
+      border: 1px solid rgba(16, 21, 36, 0.15);
+      border-radius: 999px;
+      padding: 0.65rem 1.15rem;
+      font-size: 0.68rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      font-weight: 600;
+      transition: all 0.25s var(--e... (truncated)

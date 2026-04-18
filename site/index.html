@@ -1,0 +1,3065 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>TJ Brand Atelier | Ultra Premium Luxury House</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2305070c'/%3E%3Ctext x='50%25' y='58%25' text-anchor='middle' font-size='36' font-family='Georgia' font-weight='700' fill='%23c5a369'%3ETJ%3C/text%3E%3C/svg%3E">
+  <link rel="alternate icon" type="image/png" href="tjlogo.png">
+  <link rel="apple-touch-icon" href="tjlogo.png">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            atelier: {
+              ink: "#101524",
+              midnight: "#141f36",
+              champagne: "#c5a369",
+              porcelain: "#f6f2ea",
+              smoke: "#d8deea",
+              clay: "#bf7343",
+              pine: "#2f5446"
+            }
+          },
+          boxShadow: {
+            soft: "0 18px 40px rgba(16, 21, 36, 0.14)",
+            luxe: "0 30px 55px rgba(16, 21, 36, 0.18)"
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    :root {
+      --ink: #101524;
+      --champagne: #c5a369;
+      --paper: #f6f2ea;
+      --mist: #d8deea;
+      --success: #0f8e63;
+      --danger: #b54a39;
+      --easing: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    * {
+      font-family: "Manrope", sans-serif;
+      font-feature-settings: "liga" 1, "calt" 1;
+    }
+
+    h1,
+    h2,
+    h3,
+    .font-display {
+      font-family: "Cormorant Garamond", serif;
+      letter-spacing: 0.01em;
+    }
+
+    p,
+    input,
+    textarea,
+    select,
+    button,
+    a {
+      letter-spacing: 0.004em;
+    }
+
+    body {
+      background:
+        radial-gradient(circle at 15% -10%, rgba(197, 163, 105, 0.16) 0%, rgba(197, 163, 105, 0) 45%),
+        radial-gradient(circle at 100% 0%, rgba(20, 31, 54, 0.09) 0%, rgba(20, 31, 54, 0) 45%),
+        linear-gradient(180deg, #fcfaf6 0%, #f3efe7 100%);
+      color: var(--ink);
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    .dark body {
+      background:
+        radial-gradient(circle at 10% -10%, rgba(197, 163, 105, 0.08) 0%, rgba(197, 163, 105, 0) 40%),
+        radial-gradient(circle at 95% 5%, rgba(84, 114, 170, 0.08) 0%, rgba(84, 114, 170, 0) 38%),
+        linear-gradient(180deg, #0f1525 0%, #0a101d 100%);
+      color: #e8edf8;
+    }
+
+    .texture-grid {
+      background-image:
+        linear-gradient(rgba(16, 21, 36, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(16, 21, 36, 0.04) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+
+    .dark .texture-grid {
+      background-image:
+        linear-gradient(rgba(232, 237, 248, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(232, 237, 248, 0.04) 1px, transparent 1px);
+    }
+
+    .nav-shell {
+      backdrop-filter: blur(14px) saturate(130%);
+      background: rgba(20, 31, 54, 0.8);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      transition: box-shadow 0.35s var(--easing), background-color 0.35s var(--easing);
+    }
+
+    .nav-shell.nav-scrolled {
+      box-shadow: 0 18px 34px rgba(0, 0, 0, 0.25);
+      background: rgba(11, 18, 33, 0.9);
+    }
+
+    .brand-mark {
+      width: 2.6rem;
+      height: 2.6rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 28%, #efdbb3 0%, #c5a369 48%, #8c6530 100%);
+      color: #1a2238;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.55), 0 10px 18px rgba(0, 0, 0, 0.28);
+    }
+
+    .brand-logo {
+      width: 3.75rem;
+      height: 3.75rem;
+      min-width: 3.75rem;
+      border-radius: 999px;
+      background: #05070c;
+      object-fit: cover;
+      box-shadow: 0 10px 18px rgba(0, 0, 0, 0.28);
+      padding: 0;
+      border: 1px solid rgba(197, 163, 105, 0.45);
+    }
+
+    .route-link-active {
+      color: #f8dca8 !important;
+    }
+
+    [data-page].is-hidden {
+      display: none;
+    }
+
+    .ui-btn {
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.25s var(--easing), box-shadow 0.25s var(--easing), background-color 0.25s var(--easing), border-color 0.25s var(--easing), color 0.25s var(--easing);
+    }
+
+    .ui-btn::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, transparent 0%, rgba(255, 255, 255, 0.3) 45%, transparent 100%);
+      transform: translateX(-120%);
+      transition: transform 0.45s var(--easing);
+    }
+
+    .ui-btn:hover::after {
+      transform: translateX(120%);
+    }
+
+    .ui-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .ui-btn:active {
+      transform: translateY(0) scale(0.99);
+    }
+
+    .ui-btn:focus-visible,
+    .icon-btn:focus-visible,
+    .chip-btn:focus-visible,
+    .icon-toggle:focus-visible {
+      outline: 2px solid rgba(197, 163, 105, 0.9);
+      outline-offset: 2px;
+    }
+
+    .icon-btn {
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      background: rgba(255, 255, 255, 0.08);
+      color: rgba(255, 255, 255, 0.88);
+      transition: all 0.25s var(--easing);
+    }
+
+    .icon-btn:hover {
+      border-color: rgba(197, 163, 105, 0.85);
+      color: #f8e9ca;
+      transform: translateY(-1px);
+    }
+
+    .card-shell {
+      border: 1px solid rgba(16, 21, 36, 0.08);
+      background: rgba(255, 255, 255, 0.78);
+      backdrop-filter: blur(8px);
+      transition: border-color 0.35s var(--easing), transform 0.35s var(--easing), box-shadow 0.35s var(--easing);
+    }
+
+    .card-shell:hover {
+      border-color: rgba(197, 163, 105, 0.7);
+      transform: translateY(-4px);
+      box-shadow: 0 22px 36px rgba(16, 21, 36, 0.15);
+    }
+
+    .dark .card-shell {
+      border-color: rgba(255, 255, 255, 0.12);
+      background: rgba(21, 31, 54, 0.6);
+    }
+
+    .hero-cover {
+      background:
+        linear-gradient(110deg, rgba(16, 21, 36, 0.88) 0%, rgba(16, 21, 36, 0.55) 45%, rgba(16, 21, 36, 0.86) 100%),
+        url("https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=2200&auto=format&fit=crop");
+      background-size: cover;
+      background-position: center;
+    }
+
+    .hero-intro {
+      opacity: 0;
+      transform: translate3d(0, 28px, 0);
+      animation: heroEntrance 1.15s var(--easing) forwards;
+      animation-delay: 0.1s;
+    }
+
+    @keyframes heroEntrance {
+      0% {
+        opacity: 0;
+        transform: translate3d(0, 28px, 0) scale(0.985);
+      }
+      100% {
+        opacity: 1;
+        transform: translate3d(0, 0, 0) scale(1);
+      }
+    }
+
+    .chip-btn {
+      border: 1px solid rgba(16, 21, 36, 0.15);
+      border-radius: 999px;
+      padding: 0.65rem 1.15rem;
+      font-size: 0.68rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      font-weight: 600;
+      transition: all 0.25s var(--easing);
+      background: rgba(255, 255, 255, 0.7);
+      color: #2a3348;
+    }
+
+    .chip-btn:hover {
+      border-color: rgba(197, 163, 105, 0.8);
+      color: #7f5e2f;
+      transform: translateY(-1px);
+    }
+
+    .chip-btn.active {
+      border-color: rgba(197, 163, 105, 0.95);
+      background: rgba(197, 163, 105, 0.16);
+      color: #7f5e2f;
+    }
+
+    .dark .chip-btn {
+      border-color: rgba(255, 255, 255, 0.16);
+      background: rgba(255, 255, 255, 0.05);
+      color: rgba(231, 237, 249, 0.9);
+    }
+
+    .dark .chip-btn.active {
+      border-color: rgba(197, 163, 105, 0.8);
+      background: rgba(197, 163, 105, 0.2);
+      color: #efd8ad;
+    }
+
+    .category-tile {
+      position: relative;
+      overflow: hidden;
+      border-radius: 1.5rem;
+      min-height: 20rem;
+      isolation: isolate;
+    }
+
+    .category-tile img {
+      transition: transform 0.9s var(--easing);
+    }
+
+    .category-tile:hover img {
+      transform: scale(1.08);
+    }
+
+    .category-tile::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(6, 10, 18, 0.84) 0%, rgba(6, 10, 18, 0.15) 55%);
+      z-index: 1;
+    }
+
+    .drawer-open,
+    .modal-open,
+    .menu-open,
+    .admin-open {
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+
+    .drawer-open .drawer-panel,
+    .menu-open .menu-panel,
+    .admin-open .admin-panel {
+      transform: translateX(0) !important;
+    }
+
+    .modal-open .modal-panel {
+      transform: scale(1);
+      opacity: 1;
+    }
+
+    .toast-item {
+      animation: toastIn 0.45s var(--easing) forwards;
+    }
+
+    @keyframes toastIn {
+      from {
+        opacity: 0;
+        transform: translateY(16px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translate3d(0, 26px, 0);
+      transition: opacity 0.88s var(--easing), transform 0.88s var(--easing);
+      transition-delay: var(--delay, 0ms);
+      will-change: transform, opacity;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+
+    .field {
+      width: 100%;
+      border: 1px solid rgba(16, 21, 36, 0.14);
+      border-radius: 1rem;
+      padding: 0.82rem 0.95rem;
+      background: rgba(255, 255, 255, 0.65);
+      transition: border-color 0.28s var(--easing), box-shadow 0.28s var(--easing), background-color 0.28s var(--easing);
+      outline: none;
+    }
+
+    .field:focus {
+      border-color: rgba(197, 163, 105, 0.85);
+      box-shadow: 0 0 0 3px rgba(197, 163, 105, 0.16);
+      background: rgba(255, 255, 255, 0.92);
+    }
+
+    .dark .field {
+      border-color: rgba(255, 255, 255, 0.18);
+      background: rgba(255, 255, 255, 0.06);
+      color: #e8edf8;
+    }
+
+    .dark .field:focus {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .copy-btn {
+      transition: color 0.25s var(--easing), transform 0.25s var(--easing);
+    }
+
+    .copy-btn:hover {
+      color: #8d6330;
+      transform: translateY(-1px);
+    }
+
+    .faq-item[data-open="true"] .faq-answer {
+      grid-template-rows: 1fr;
+      opacity: 1;
+    }
+
+    .faq-answer {
+      display: grid;
+      grid-template-rows: 0fr;
+      opacity: 0;
+      transition: grid-template-rows 0.36s var(--easing), opacity 0.36s var(--easing);
+    }
+
+    .faq-answer > div {
+      overflow: hidden;
+    }
+
+    .faq-item[data-open="true"] .faq-icon {
+      transform: rotate(45deg);
+    }
+
+    .faq-icon {
+      transition: transform 0.3s var(--easing);
+    }
+
+    .icon-toggle {
+      width: 2.6rem;
+      height: 2.6rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.08);
+      color: rgba(255, 255, 255, 0.88);
+      transition: all 0.25s var(--easing);
+    }
+
+    .icon-toggle:hover {
+      border-color: rgba(197, 163, 105, 0.85);
+      color: #f8e9ca;
+    }
+
+    .admin-input {
+      width: 100%;
+      border: 1px solid rgba(16, 21, 36, 0.14);
+      border-radius: 0.85rem;
+      padding: 0.72rem 0.84rem;
+      background: rgba(255, 255, 255, 0.78);
+      outline: none;
+      transition: border-color 0.25s var(--easing), box-shadow 0.25s var(--easing);
+    }
+
+    .admin-input:focus {
+      border-color: rgba(197, 163, 105, 0.9);
+      box-shadow: 0 0 0 3px rgba(197, 163, 105, 0.14);
+    }
+
+    .dark .admin-input {
+      border-color: rgba(255, 255, 255, 0.18);
+      background: rgba(255, 255, 255, 0.06);
+      color: #e8edf8;
+    }
+
+    .admin-tag {
+      border: 1px solid rgba(16, 21, 36, 0.12);
+      border-radius: 999px;
+      font-size: 0.63rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 0.4rem 0.75rem;
+      color: #3d4861;
+      background: rgba(255, 255, 255, 0.72);
+    }
+
+    .dark .admin-tag {
+      border-color: rgba(255, 255, 255, 0.16);
+      color: rgba(233, 238, 249, 0.86);
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    ::-webkit-scrollbar {
+      width: 7px;
+      height: 7px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: rgba(16, 21, 36, 0.08);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: rgba(197, 163, 105, 0.8);
+      border-radius: 999px;
+    }
+
+    @media (max-width: 768px) {
+      .brand-logo {
+        width: 3.25rem;
+        height: 3.25rem;
+        min-width: 3.25rem;
+      }
+
+      .hero-cover {
+        background-position: 60% center;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
+    /* Responsive product grid: horizontal scroller on very small screens */
+    @media (max-width: 640px) {
+      #products-grid {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: min(80vw, 20rem);
+        gap: 1rem;
+        overflow-x: auto;
+        padding-left: 1rem;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      #products-grid > article {
+        scroll-snap-align: start;
+        min-width: auto;
+      }
+    }
+  </style>
+</head>
+<body class="text-atelier-ink dark:text-slate-100">
+  <div class="pointer-events-none fixed inset-0 texture-grid opacity-30 dark:opacity-20"></div>
+
+  <div id="toast-container" class="fixed top-24 right-4 z-[200] w-[min(92vw,24rem)] space-y-3"></div>
+
+  <div id="mobile-menu-shell" class="fixed inset-0 z-[140] opacity-0 invisible transition-all duration-300 bg-black/45">
+    <div class="menu-panel absolute right-0 top-0 h-full w-[86vw] max-w-sm bg-[#0f1629] text-white border-l border-white/10 p-7 transform translate-x-full transition-transform duration-500">
+      <div class="flex items-center justify-between">
+        <div class="inline-flex items-center gap-3">
+          <img src="tjlogo.png" alt="TJ Brand logo" class="brand-logo">
+          <div>
+            <p class="font-display text-xl leading-none text-atelier-champagne">TJ Brand</p>
+            <p class="text-[10px] uppercase tracking-[0.28em] text-white/70 mt-1">Private Atelier</p>
+          </div>
+        </div>
+        <button id="close-mobile-menu" class="icon-toggle" aria-label="Close mobile menu">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <div class="mt-12 space-y-6 text-sm uppercase tracking-[0.28em]">
+        <a href="#home" data-route-link="home" class="mobile-nav-link block text-white/80 hover:text-atelier-champagne transition">Home</a>
+        <a href="#collections" data-route-link="collections" class="mobile-nav-link block text-white/80 hover:text-atelier-champagne transition">Collections</a>
+        <a href="#shop" data-route-link="shop" class="mobile-nav-link block text-white/80 hover:text-atelier-champagne transition">Shop</a>
+        <a href="#contact" data-route-link="contact" class="mobile-nav-link block text-white/80 hover:text-atelier-champagne transition">Contact</a>
+      </div>
+
+      <div class="mt-12 p-5 rounded-2xl border border-white/10 bg-white/5">
+        <p class="text-[10px] uppercase tracking-[0.26em] text-white/60">Need Stylist Help?</p>
+        <p class="mt-3 text-sm text-white/80 leading-relaxed">Book your private fitting in under 60 seconds from our concierge desk.</p>
+        <a href="#contact" data-route-link="contact" class="ui-btn mt-5 inline-flex items-center justify-center px-5 py-3 rounded-full bg-atelier-champagne text-atelier-ink text-[11px] uppercase tracking-[0.2em] font-semibold">Book Appointment</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="cart-shell" class="fixed inset-0 z-[150] opacity-0 invisible transition-all duration-300 bg-black/45">
+    <aside class="drawer-panel absolute right-0 top-0 h-full w-full max-w-md bg-white dark:bg-[#111a30] border-l border-black/10 dark:border-white/10 transform translate-x-full transition-transform duration-500 flex flex-col">
+      <header class="px-7 py-6 border-b border-black/10 dark:border-white/10 flex items-center justify-between">
+        <div>
+          <p class="text-[10px] uppercase tracking-[0.24em] text-slate-500 dark:text-slate-400">Cart</p>
+          <h2 class="font-display text-3xl">Atelier Bag</h2>
+        </div>
+        <button id="close-cart" class="w-10 h-10 rounded-full border border-slate-300 dark:border-white/20 hover:border-atelier-champagne hover:text-atelier-champagne transition" aria-label="Close cart">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </header>
+
+      <div id="cart-items" class="flex-1 overflow-y-auto p-7 space-y-4"></div>
+
+      <footer class="px-7 py-6 border-t border-black/10 dark:border-white/10 space-y-4">
+        <div class="flex items-center justify-between text-sm">
+          <span class="uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400">Subtotal</span>
+          <span id="cart-subtotal" class="font-display text-2xl">PKR 0</span>
+        </div>
+        <button id="checkout-btn" class="ui-btn w-full rounded-full py-3.5 bg-atelier-ink dark:bg-atelier-champagne text-white dark:text-atelier-ink uppercase tracking-[0.18em] text-[11px] font-semibold">Proceed To Checkout</button>
+      </footer>
+    </aside>
+  </div>
+
+  <div id="product-modal" class="fixed inset-0 z-[160] opacity-0 invisible transition-all duration-300 bg-black/65 backdrop-blur-sm flex items-center justify-center px-4">
+    <div class="modal-panel max-w-4xl w-full rounded-3xl overflow-hidden bg-white dark:bg-[#121d35] shadow-luxe opacity-0 scale-95 transition-all duration-300">
+      <div class="grid md:grid-cols-2">
+        <div class="min-h-[20rem] md:min-h-[32rem]">
+          <img id="modal-image" src="" alt="" class="w-full h-full object-cover">
+        </div>
+        <div class="p-8 md:p-10">
+          <div class="flex justify-between items-start gap-6">
+            <div>
+              <p id="modal-badge" class="text-[10px] uppercase tracking-[0.26em] text-atelier-clay font-semibold"></p>
+              <h3 id="modal-name" class="font-display text-4xl mt-2"></h3>
+            </div>
+            <button id="close-product-modal" class="w-10 h-10 rounded-full border border-slate-300 dark:border-white/20 hover:border-atelier-champagne hover:text-atelier-champagne transition" aria-label="Close product preview">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+          <p id="modal-price" class="mt-5 text-2xl font-display text-atelier-champagne"></p>
+          <p id="modal-description" class="mt-5 text-slate-600 dark:text-slate-300 leading-relaxed"></p>
+          <div class="mt-8 flex flex-col sm:flex-row gap-3">
+            <button id="modal-add-cart" class="ui-btn flex-1 rounded-full py-3.5 bg-atelier-ink dark:bg-atelier-champagne text-white dark:text-atelier-ink uppercase tracking-[0.18em] text-[11px] font-semibold">Add To Bag</button>
+            <a href="#contact" data-route-link="contact" class="ui-btn flex-1 rounded-full py-3.5 border border-slate-300 dark:border-white/20 text-center uppercase tracking-[0.18em] text-[11px] font-semibold">Request Styling</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="admin-shell" class="fixed inset-0 z-[170] opacity-0 invisible transition-all duration-300 bg-black/60 backdrop-blur-sm">
+    <aside class="admin-panel absolute right-0 top-0 h-full w-full max-w-6xl bg-white dark:bg-[#0f182d] border-l border-black/10 dark:border-white/10 transform translate-x-full transition-transform duration-500 flex flex-col">
+      <header class="px-6 md:px-8 py-5 border-b border-black/10 dark:border-white/10 flex items-center justify-between gap-4">
+        <div>
+          <p class="text-[10px] uppercase tracking-[0.24em] text-slate-500 dark:text-slate-300">Control Room</p>
+          <h2 class="font-display text-4xl">Atelier Admin Panel</h2>
+        </div>
+        <button id="close-admin" class="w-10 h-10 rounded-full border border-slate-300 dark:border-white/20 hover:border-atelier-champagne hover:text-atelier-champagne transition" aria-label="Close admin panel">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </header>
+
+      <div class="flex-1 overflow-y-auto p-6 md:p-8 space-y-8">
+        <section id="admin-lock-view" class="rounded-3xl border border-black/10 dark:border-white/10 bg-white/70 dark:bg-white/5 p-6 md:p-8">
+          <p class="text-[11px] uppercase tracking-[0.26em] text-atelier-clay font-semibold">Secure Access</p>
+          <h3 class="mt-3 font-display text-5xl">Unlock Dashboard</h3>
+          <p class="mt-3 text-sm text-slate-600 dark:text-slate-300">Enter passcode to manage products, categories, prices and contact data. Default passcode: <span class="font-semibold">tjadmin123</span></p>
+
+          <form id="admin-login-form" class="mt-6 max-w-md space-y-4">
+            <div>
+              <label for="admin-passcode" class="text-xs uppercase tracking-[0.18em] text-slate-500 dark:text-slate-300">Admin Passcode</label>
+              <input id="admin-passcode" type="password" required class="admin-input mt-2" placeholder="Enter secure passcode">
+            </div>
+            <button type="submit" class="ui-btn rounded-full px-6 py-3 bg-atelier-ink dark:bg-atelier-champagne text-white dark:text-atelier-ink uppercase tracking-[0.18em] text-[11px] font-semibold">Unlock Panel</button>
+            <p id="admin-login-feedback" class="text-sm"></p>
+          </form>
+        </section>
+
+        <section id="admin-workspace" class="hidden space-y-8">
+          <div class="grid md:grid-cols-3 gap-4">
+            <article class="rounded-2xl border border-black/10 dark:border-white/10 p-5 bg-white/70 dark:bg-white/5">
+              <p class="text-[10px] uppercase tracking-[0.2em] text-slate-500 dark:text-slate-300">Total Products</p>
+              <p id="admin-stat-products" class="mt-2 font-display text-5xl">0</p>
+            </article>
+            <article class="rounded-2xl border border-black/10 dark:border-white/10 p-5 bg-white/70 dark:bg-white/5">
+              <p class="text-[10px] uppercase tracking-[0.2em] text-slate-500 dark:text-slate-300">Categories</p>
+              <p id="admin-stat-categories" class="mt-2 font-display text-5xl">0</p>
+            </article>
+            <article class="rounded-2xl border border-black/10 dark:border-white/10 p-5 bg-white/70 dark:bg-white/5">
+              <p class="text-[10px] uppercase tracking-[0.2em] text-slate-500 dark:text-slate-300">Catalog Value</p>
+              <p id="admin-stat-value" class="mt-2 font-display text-4xl">PKR 0</p>
+            </article>
+          </div>
+
+          <div class="grid xl:grid-cols-2 gap-6">
+            <article class="rounded-3xl border border-black/10 dark:border-white/10 p-5 md:p-6 bg-white/70 dark:bg-white/5">
+              <div class="flex items-center justify-between gap-3">
+                <div>
+                  <p class="text-[11px] uppercase tracking-[0.22em] text-atelier-clay font-semibold">Catalog Product</p>
+                  <h3 class="font-display text-4xl mt-2">Create / Edit</h3>
+                </div>
+                <span id="admin-product-mode" class="admin-tag">Add Mode</span>
+              </div>
+
+              <form id="admin-product-form" class="mt-5 space-y-4">
+                <input id="admin-product-edit-id" type="hidden">
+                <div class="grid sm:grid-cols-2 gap-4">
+                  <div>
+                    <label for="admin-product-name" class="text-xs uppercase tracking-[0.18em] text-slate-500 dark:text-slate-300">Product Name</label>
+                    <input id="admin-product-name" required class="admin-input mt-2" placeholder="Product title">
+                  </div>
+                  <div>
+                    <label for="admin-product-category" class="text-xs uppercase tracking-[0.18em] text-slate-500 dark:text-slate-300">Category</label>
+                    <select id="admin-product-category" required class="admin-input mt-2"></select>
+                  </div>
+                </div>
+
+                <div class="grid sm:grid-cols-2 gap-4">
+                  <div>
+                    <label for="admin-product-price" class="text-xs uppercase tracking-[0.18em] text-slate-500 dark:text-slate-300">Price (PKR)</label>
+                    <input id="admin-product-price" type="number" min="1" required class="admin-input mt-2" placeholder="214000">
+                  </div>
+                  <div>
+                    <label for="admin-product-badge" class="text-xs uppercase tracking-[0.18em] text-slate-500 dark:text-slate-300">Badge</label>
+                    <input id="admin-product-badge" class="admin-input mt-2" placeholder="Men Tailoring">
+                  </div>
+                </div>
+
+                <div>
+                  <label for="admin-product-image" class="text-xs uppercase tracking-[0.18em] text-slate-500 dark:text-slate-300">Image URL</label>
+                  <input id="admin-product-image" type="url" required class="admin-input mt-2" placeholder="https://...">
+                </div>
+
+                <div>
+                  <label for="admin-product-description" class="text-xs uppercase tracking-[0.18em] text-slate-500 dark:text-slate-300">Description</label>
+                  <textarea id="admin-product-description" rows="3" required class="admin-input mt-2 resize-y" placeholder="Product details"></textarea>
+                </div>
+
+                <div class="flex flex-wrap gap-3">
+                  <button type="submit" class="ui-btn rounded-full px-6 py-3 bg-atelier-ink dark:bg-atelier-champagne text-white dark:text-atelier-ink uppercase tracking-[0.18em] text-[11px] font-semibold">Save Product</button>
+                  <button id="admin-product-reset" type="button" class="ui-btn rounded-full px-6 py-3 border border-slate-300 dark:border-white/20 uppercase tracking-[0.18em] text-[11px] font-semibold">Reset</button>
+                </div>
+                <p id="admin-product-feedback" class="text-sm"></p>
+              </form>
+            </article>
+
+            <article class="rounded-3xl border border-black/10 dark:border-white/10 p-5 md:p-6 bg-white/70 dark:bg-white/5">
+              <div class="flex items-center justify-between gap-3">
+                <div>
+                  <p class="text-[11px] uppercase tracking-[0.22em] text-atelier-clay font-semibold">Category Control</p>
+                  <h3 class="font-display text-4xl mt-2">Manage Categories</h3>
+                </div>
+                <span id="admin-category-mode" class="admin-tag">Add Mode</span>
+              </div>
+
+              <form id="admin-category-form" class="mt-5 space-y-4">
+                <input id="admin-category-edit-id" type="hidden">
+                <div>
+                  <label for="admin-category-id" class="text-xs uppercase tracking-[0.18em] text-slate-500 dark:text-slate-300">Category ID</label>
+                  <input id="admin-category-id" required class="admin-input mt-2" placeholder="men-formal">
+                </div>
+                <div>
+                  <label for="admin-category-name" class="text-xs uppercase tracking-[0.18em] text-slate-500 dark:text-slate-300">Display Name</label>
+                  <input id="admin-category-name" required class="admin-input mt-2" placeholder="Men Formal">
+                </div>
+                <div>
+                  <label for="admin-category-title" class="text-xs uppercase tracking-[0.18em] text-slate-500 dark:text-slate-300">Collection Title</label>
+                  <input id="admin-category-title" required class="admin-input mt-2" placeholder="Sharp Tailoring">
+                </div>
+                <div>
+                  <label for="admin-category-image" class="text-xs uppercase tracking-[0.18em] text-slate-500 dark:text-slate-300">Collection Image URL</label>
+                  <input id="admin-category-image" type="url" required class="admin-input mt-2" placeholder="https://...">
+                </div>
+                <div class="flex flex-wrap gap-3">
+                  <button type="submit" class="ui-btn rounded-full px-6 py-3 bg-atelier-ink dark:bg-atelier-champagne text-white dark:text-atelier-ink uppercase tracking-[0.18em] text-[11px] font-semibold">Save Category</button>
+                  <button id="admin-category-reset" type="button" class="ui-btn rounded-full px-6 py-3 border border-slate-300 dark:border-white/20 uppercase tracking-[0.18em] text-[11px] font-semibold">Reset</button>
+                </div>
+                <p id="admin-category-feedback" class="text-sm"></p>
+              </form>
+            </article>
+          </div>
+
+          <article class="rounded-3xl border border-black/10 dark:border-white/10 p-5 md:p-6 bg-white/70 dark:bg-white/5">
+            <p class="text-[11px] uppercase tracking-[0.22em] text-atelier-clay font-semibold">Contact Settings</p>
+            <h3 class="font-display text-4xl mt-2">Update Contact Blocks</h3>
+            <form id="admin-contact-form" class="mt-5 grid md:grid-cols-2 gap-4">
+              <div>
+                <label for="admin-contact-email" class="text-xs uppercase tracking-[0.18em] text-slate-500 dark:text-slate-300">Email</label>
+                <input id="admin-contact-email" type="email" class="admin-input mt-2" required>
+              </div>
+              <div>
+                <label for="admin-contact-phone" class="text-xs uppercase tracking-[0.18em] text-slate-500 dark:text-slate-300">Phone</label>
+                <input id="admin-contact-phone" class="admin-input mt-2" required>
+              </div>
+              <div>
+                <label for="admin-contact-hours" class="text-xs uppercase tracking-[0.18em] text-slate-500 dark:text-slate-300">Hours</label>
+                <input id="admin-contact-hours" class="admin-input mt-2" required>
+              </div>
+              <div>
+                <label for="admin-contact-hours-note" class="text-xs uppercase tracking-[0.18em] text-slate-500 dark:text-slate-300">Hours Note</label>
+                <input id="admin-contact-hours-note" class="admin-input mt-2" required>
+              </div>
+              <div class="md:col-span-2">
+                <label for="admin-contact-address" class="text-xs uppercase tracking-[0.18em] text-slate-500 dark:text-slate-300">Address</label>
+                <input id="admin-contact-address" class="admin-input mt-2" required>
+              </div>
+              <div class="md:col-span-2 flex flex-wrap gap-3">
+                <button type="submit" class="ui-btn rounded-full px-6 py-3 bg-atelier-ink dark:bg-atelier-champagne text-white dark:text-atelier-ink uppercase tracking-[0.18em] text-[11px] font-semibold">Save Contact Settings</button>
+                <button id="admin-logout" type="button" class="ui-btn rounded-full px-6 py-3 border border-slate-300 dark:border-white/20 uppercase tracking-[0.18em] text-[11px] font-semibold">Lock Panel</button>
+                <button id="admin-reset-catalog" type="button" class="ui-btn rounded-full px-6 py-3 border border-red-300 text-red-600 dark:text-red-300 dark:border-red-400/40 uppercase tracking-[0.18em] text-[11px] font-semibold">Reset Catalog</button>
+              </div>
+              <p id="admin-contact-feedback" class="md:col-span-2 text-sm"></p>
+            </form>
+          </article>
+
+          <div class="grid xl:grid-cols-2 gap-6">
+            <article class="rounded-3xl border border-black/10 dark:border-white/10 p-5 md:p-6 bg-white/70 dark:bg-white/5">
+              <p class="text-[11px] uppercase tracking-[0.22em] text-atelier-clay font-semibold">Inventory List</p>
+              <h3 class="font-display text-4xl mt-2">Products</h3>
+              <div id="admin-product-list" class="mt-5 space-y-3"></div>
+            </article>
+
+            <article class="rounded-3xl border border-black/10 dark:border-white/10 p-5 md:p-6 bg-white/70 dark:bg-white/5">
+              <p class="text-[11px] uppercase tracking-[0.22em] text-atelier-clay font-semibold">Category List</p>
+              <h3 class="font-display text-4xl mt-2">Collections</h3>
+              <div id="admin-category-list" class="mt-5 space-y-3"></div>
+            </article>
+          </div>
+        </section>
+      </div>
+    </aside>
+  </div>
+
+  <nav id="site-nav" class="nav-shell fixed top-0 inset-x-0 z-[120]">
+    <div class="max-w-7xl mx-auto px-5 md:px-10 py-4 flex items-center justify-between gap-4">
+      <a href="index.html" class="inline-flex items-center gap-3" aria-label="TJ Brand Atelier home">
+        <img src="tjlogo.png" alt="TJ Brand logo" class="brand-logo">
+        <div>
+          <p class="font-display text-[1.25rem] text-atelier-champagne leading-none">TJ Brand</p>
+          <p class="text-[10px] uppercase tracking-[0.3em] text-white/70">Peshawar Atelier</p>
+        </div>
+      </a>
+
+      <div class="hidden md:flex items-center gap-10 text-[11px] uppercase tracking-[0.26em] text-white/80">
+        <a href="#home" data-route-link="home" class="hover:text-atelier-champagne transition">Home</a>
+        <a href="#collections" data-route-link="collections" class="hover:text-atelier-champagne transition">Collections</a>
+        <a href="#shop" data-route-link="shop" class="hover:text-atelier-champagne transition">Shop</a>
+        <a href="#contact" data-route-link="contact" class="hover:text-atelier-champagne transition">Contact</a>
+      </div>
+
+      <div class="flex items-center gap-2 md:gap-3">
+        <button id="open-admin" class="icon-btn hidden sm:inline-flex" aria-label="Open admin panel">
+          <i class="fa-solid fa-user-gear"></i>
+        </button>
+        <button id="theme-toggle" class="icon-toggle" aria-label="Toggle theme">
+          <i id="theme-icon" class="fa-solid fa-moon"></i>
+        </button>
+        <button id="focus-search" class="icon-btn" aria-label="Focus search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+        <button id="open-cart" class="icon-btn relative" aria-label="Open cart">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span id="cart-count" class="absolute -top-1 -right-1 min-w-[1.05rem] h-[1.05rem] px-1 rounded-full bg-atelier-champagne text-[9px] font-bold text-atelier-ink inline-flex items-center justify-center">0</span>
+        </button>
+        <button id="open-mobile-menu" class="icon-btn md:hidden" aria-label="Open mobile menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section id="home" data-page="home" class="hero-cover min-h-screen flex items-center pt-24 md:pt-28">
+      <div class="max-w-7xl mx-auto px-5 md:px-10 py-20 w-full">
+        <div class="max-w-3xl reveal hero-intro" style="--delay: 80ms;">
+          <p class="text-[11px] uppercase tracking-[0.34em] text-atelier-champagne font-semibold">Edition 2026 | Signature House</p>
+          <h1 class="mt-5 text-white text-6xl md:text-8xl leading-[0.92]">
+            Elevated Craft,
+            <span class="italic font-medium text-[#f3e8d0]">Engineered Presence</span>
+          </h1>
+          <p class="mt-7 text-slate-200 text-lg md:text-xl leading-relaxed max-w-2xl">
+            Har design ek statement hai. Hand-built silhouettes, museum-grade materials, aur timeless confidence ke liye curated luxury wardrobe.
+          </p>
+
+          <div class="mt-10 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+            <a href="#shop" data-route-link="shop" class="ui-btn inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-atelier-champagne text-atelier-ink uppercase tracking-[0.18em] text-[11px] font-semibold shadow-soft">Shop The Archive</a>
+            <a href="#contact" data-route-link="contact" class="ui-btn inline-flex items-center justify-center px-8 py-3.5 rounded-full border border-white/35 text-white uppercase tracking-[0.18em] text-[11px] font-semibold">Book Private Styling</a>
+          </div>
+
+          <div class="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-4 text-white/90">
+            <div class="p-4 rounded-xl bg-white/10 border border-white/15">
+              <p class="font-display text-3xl">120h</p>
+              <p class="text-[10px] uppercase tracking-[0.26em] text-white/70 mt-1">Craft Time</p>
+            </div>
+            <div class="p-4 rounded-xl bg-white/10 border border-white/15">
+              <p class="font-display text-3xl">42</p>
+              <p class="text-[10px] uppercase tracking-[0.26em] text-white/70 mt-1">Master Artisans</p>
+            </div>
+            <div class="p-4 rounded-xl bg-white/10 border border-white/15">
+              <p class="font-display text-3xl">17</p>
+              <p class="text-[10px] uppercase tracking-[0.26em] text-white/70 mt-1">Material Tests</p>
+            </div>
+            <div class="p-4 rounded-xl bg-white/10 border border-white/15">
+              <p class="font-display text-3xl">4.9</p>
+              <p class="text-[10px] uppercase tracking-[0.26em] text-white/70 mt-1">Client Rating</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section data-page="home" class="py-8 border-y border-black/10 dark:border-white/10 bg-white/75 dark:bg-[#121c34]/70 backdrop-blur-sm">
+      <div class="max-w-7xl mx-auto px-5 md:px-10 flex flex-wrap items-center justify-center gap-x-10 gap-y-4 text-[11px] uppercase tracking-[0.25em] text-slate-500 dark:text-slate-300">
+        <span>Featured In Vogue Arabia</span>
+        <span>Private Fittings Worldwide</span>
+        <span>Lifetime Stitch Support</span>
+        <span>Limited Capsule Drops</span>
+      </div>
+    </section>
+
+    <section id="collections" data-page="collections" class="py-20 md:py-24">
+      <div class="max-w-7xl mx-auto px-5 md:px-10">
+        <div class="max-w-3xl text-center mx-auto reveal" style="--delay: 70ms;">
+          <p class="text-[11px] uppercase tracking-[0.28em] text-atelier-clay font-semibold">Fast Access</p>
+          <h2 class="mt-4 text-5xl md:text-6xl font-display">Curated Signature Worlds</h2>
+          <p class="mt-4 text-slate-600 dark:text-slate-300">Select a world to instantly filter products with precision. This keeps shopping focused and fast.</p>
+        </div>
+
+        <div id="collections-grid" class="mt-12 grid md:grid-cols-3 gap-6"></div>
+      </div>
+    </section>
+
+    <section id="shop" data-page="shop" class="py-20 md:py-24 border-y border-black/10 dark:border-white/10 bg-white/70 dark:bg-[#0f182d]/70 backdrop-blur-sm">
+      <div class="max-w-7xl mx-auto px-5 md:px-10">
+        <div class="flex flex-col lg:flex-row gap-8 lg:items-end lg:justify-between">
+          <div class="max-w-2xl reveal" style="--delay: 80ms;">
+            <p class="text-[11px] uppercase tracking-[0.28em] text-atelier-clay font-semibold">Product Matrix</p>
+            <h2 class="mt-4 text-5xl md:text-6xl font-display">Shop With Precision</h2>
+            <p class="mt-4 text-slate-600 dark:text-slate-300">Filters, search, quick-view modal, and live bag updates are all optimized for premium browsing behavior.</p>
+          </div>
+
+          <div class="flex-1 lg:max-w-xl reveal" style="--delay: 150ms;">
+            <label for="product-search" class="sr-only">Search products</label>
+            <div class="flex items-center rounded-full border border-black/10 dark:border-white/20 bg-white/70 dark:bg-white/5 px-4 py-3">
+              <i class="fa-solid fa-magnifying-glass text-slate-400 mr-3"></i>
+              <input id="product-search" type="search" placeholder="Search by product name, category or finish" class="w-full bg-transparent outline-none text-sm placeholder:text-slate-400 dark:placeholder:text-slate-500">
+            </div>
+          </div>
+        </div>
+
+        <div id="filter-chips" class="mt-8 flex flex-wrap gap-3 reveal" style="--delay: 200ms;"></div>
+
+        <div id="products-grid" class="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-7"></div>
+      </div>
+    </section>
+
+    <section data-page="home" class="py-20 md:py-24">
+      <div class="max-w-7xl mx-auto px-5 md:px-10 grid xl:grid-cols-[1.1fr_1fr] gap-9">
+        <article class="reveal card-shell rounded-3xl p-8 md:p-10" style="--delay: 90ms;">
+          <p class="text-[11px] uppercase tracking-[0.28em] text-atelier-clay font-semibold">Atelier Protocol</p>
+          <h2 class="mt-4 text-5xl font-display">How Premium Is Delivered</h2>
+          <ol class="mt-8 space-y-6">
+            <li class="flex gap-4">
+              <span class="w-8 h-8 rounded-full bg-atelier-champagne/20 text-atelier-clay font-semibold text-sm inline-flex items-center justify-center shrink-0">1</span>
+              <div>
+                <h3 class="font-semibold text-lg">Profile Mapping</h3>
+                <p class="text-slate-600 dark:text-slate-300 mt-1 text-sm">We capture silhouette preferences, fit behavior and event calendar before any recommendation.</p>
+              </div>
+            </li>
+            <li class="flex gap-4">
+              <span class="w-8 h-8 rounded-full bg-atelier-champagne/20 text-atelier-clay font-semibold text-sm inline-flex items-center justify-center shrink-0">2</span>
+              <div>
+                <h3 class="font-semibold text-lg">Material Selection</h3>
+                <p class="text-slate-600 dark:text-slate-300 mt-1 text-sm">Italian wools, French satins and full-grain leathers are selected by hand for each capsule.</p>
+              </div>
+            </li>
+            <li class="flex gap-4">
+              <span class="w-8 h-8 rounded-full bg-atelier-champagne/20 text-atelier-clay font-semibold text-sm inline-flex items-center justify-center shrink-0">3</span>
+              <div>
+                <h3 class="font-semibold text-lg">Final Calibration</h3>
+                <p class="text-slate-600 dark:text-slate-300 mt-1 text-sm">Micro-adjustments ensure drape, comfort and visual balance before dispatch.</p>
+              </div>
+            </li>
+          </ol>
+        </article>
+
+        <article class="reveal rounded-3xl overflow-hidden bg-atelier-midnight text-white shadow-luxe" style="--delay: 150ms;">
+          <div class="h-full p-8 md:p-10 flex flex-col justify-between">
+            <div>
+              <p class="text-[11px] uppercase tracking-[0.28em] text-atelier-champagne">Private Circle</p>
+              <h3 class="mt-4 font-display text-5xl">Invitation-Only Access</h3>
+              <p class="mt-5 text-slate-200 leading-relaxed">Join our limited client roster for first lookbooks, closed drops and direct concierge support across Lahore, Karachi and Dubai.</p>
+            </div>
+            <form id="newsletter-form" class="mt-8">
+              <label for="newsletter-email" class="sr-only">Email address</label>
+              <div class="flex flex-col sm:flex-row gap-3">
+                <input id="newsletter-email" type="email" required placeholder="Your email address" class="flex-1 rounded-full px-5 py-3 bg-white/10 border border-white/20 placeholder:text-slate-300 outline-none focus:border-atelier-champagne">
+                <button type="submit" class="ui-btn rounded-full px-6 py-3 bg-atelier-champagne text-atelier-ink uppercase tracking-[0.18em] text-[11px] font-semibold">Request Invite</button>
+              </div>
+              <p id="newsletter-note" class="text-xs text-slate-300 mt-4"></p>
+            </form>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section data-page="home" class="pb-20 md:pb-24">
+      <div class="max-w-7xl mx-auto px-5 md:px-10">
+        <div class="reveal rounded-3xl overflow-hidden border border-black/10 dark:border-white/10 bg-white/70 dark:bg-[#111b32]/70" style="--delay: 110ms;">
+          <div class="grid lg:grid-cols-3">
+            <article class="p-7 md:p-9 lg:border-r border-black/10 dark:border-white/10">
+              <p class="text-[11px] uppercase tracking-[0.24em] text-atelier-clay font-semibold">Journal Drop</p>
+              <h3 class="mt-3 font-display text-4xl">Seasonal Direction</h3>
+              <p class="mt-3 text-sm text-slate-600 dark:text-slate-300">Learn what silhouettes and materials are trending across formal, business and ceremonial wardrobes this quarter.</p>
+            </article>
+            <article class="p-7 md:p-9 lg:border-r border-black/10 dark:border-white/10">
+              <p class="text-[11px] uppercase tracking-[0.24em] text-atelier-clay font-semibold">Fit Lab</p>
+              <h3 class="mt-3 font-display text-4xl">Precision Metrics</h3>
+              <p class="mt-3 text-sm text-slate-600 dark:text-slate-300">Our fit lab logs shoulder angle, inseam behavior and shoe pressure mapping before we finalize each order.</p>
+            </article>
+            <article class="p-7 md:p-9">
+              <p class="text-[11px] uppercase tracking-[0.24em] text-atelier-clay font-semibold">Client Priority</p>
+              <h3 class="mt-3 font-display text-4xl">48-Hour Concierge</h3>
+              <p class="mt-3 text-sm text-slate-600 dark:text-slate-300">Premium clients receive 48-hour response SLA for fit revisions, event guidance and order visibility.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section data-page="shop" class="py-20 border-y border-black/10 dark:border-white/10 bg-white/75 dark:bg-[#121c34]/60 backdrop-blur-sm">
+      <div class="max-w-7xl mx-auto px-5 md:px-10">
+        <div class="max-w-3xl reveal" style="--delay: 70ms;">
+          <p class="text-[11px] uppercase tracking-[0.28em] text-atelier-clay font-semibold">Service Add-ons</p>
+          <h2 class="mt-3 font-display text-5xl">Book Premium Services</h2>
+          <p class="mt-3 text-slate-600 dark:text-slate-300">In-person consultations and remote support can be added directly to your bag.</p>
+        </div>
+
+        <div class="mt-8 grid lg:grid-cols-3 gap-4">
+          <div class="rounded-2xl border border-black/10 dark:border-white/10 p-4 flex justify-between items-center gap-4 bg-white/70 dark:bg-white/5 reveal" style="--delay: 110ms;">
+            <div>
+              <p class="font-semibold">Style Direction Session</p>
+              <p class="text-xs text-slate-500 dark:text-slate-300 mt-1">90-minute wardrobe blueprint session</p>
+            </div>
+            <button type="button" class="ui-btn add-service rounded-full px-4 py-2 bg-atelier-champagne text-atelier-ink text-[11px] uppercase tracking-[0.16em] font-semibold" data-id="svc-style" data-name="Style Direction Session" data-price="18000" data-badge="Concierge Service">Add</button>
+          </div>
+
+          <div class="rounded-2xl border border-black/10 dark:border-white/10 p-4 flex justify-between items-center gap-4 bg-white/70 dark:bg-white/5 reveal" style="--delay: 150ms;">
+            <div>
+              <p class="font-semibold">Bespoke Foot Scan</p>
+              <p class="text-xs text-slate-500 dark:text-slate-300 mt-1">Digital measurement and fit engineering</p>
+            </div>
+            <button type="button" class="ui-btn add-service rounded-full px-4 py-2 bg-atelier-champagne text-atelier-ink text-[11px] uppercase tracking-[0.16em] font-semibold" data-id="svc-scan" data-name="Bespoke Foot Scan" data-price="32000" data-badge="Concierge Service">Add</button>
+          </div>
+
+          <div class="rounded-2xl border border-black/10 dark:border-white/10 p-4 flex justify-between items-center gap-4 bg-white/70 dark:bg-white/5 reveal" style="--delay: 190ms;">
+            <div>
+              <p class="font-semibold">Event Styling Intensive</p>
+              <p class="text-xs text-slate-500 dark:text-slate-300 mt-1">Look planning for weddings and formal galas</p>
+            </div>
+            <button type="button" class="ui-btn add-service rounded-full px-4 py-2 bg-atelier-champagne text-atelier-ink text-[11px] uppercase tracking-[0.16em] font-semibold" data-id="svc-event" data-name="Event Styling Intensive" data-price="26000" data-badge="Concierge Service">Add</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section data-page="contact" class="py-16 border-y border-black/10 dark:border-white/10 bg-white/75 dark:bg-[#121c34]/70 backdrop-blur-sm">
+      <div class="max-w-7xl mx-auto px-5 md:px-10 grid sm:grid-cols-2 xl:grid-cols-4 gap-5">
+        <article class="card-shell reveal rounded-2xl p-5" style="--delay: 70ms;">
+          <p class="text-[10px] uppercase tracking-[0.24em] text-slate-500 dark:text-slate-300">Email Desk</p>
+          <p id="contact-email-value" class="mt-3 font-semibold">concierge@tjbrandatelier.com</p>
+          <button type="button" id="copy-email-btn" class="copy-btn mt-4 text-[11px] uppercase tracking-[0.18em] text-atelier-clay font-semibold" data-copy="concierge@tjbrandatelier.com">Copy Email</button>
+        </article>
+
+        <article class="card-shell reveal rounded-2xl p-5" style="--delay: 120ms;">
+          <p class="text-[10px] uppercase tracking-[0.24em] text-slate-500 dark:text-slate-300">Phone</p>
+          <p id="contact-phone-value" class="mt-3 font-semibold">03220254568</p>
+          <button type="button" id="copy-phone-btn" class="copy-btn mt-4 text-[11px] uppercase tracking-[0.18em] text-atelier-clay font-semibold" data-copy="03220254568">Copy Number</button>
+        </article>
+
+        <article class="card-shell reveal rounded-2xl p-5" style="--delay: 170ms;">
+          <p class="text-[10px] uppercase tracking-[0.24em] text-slate-500 dark:text-slate-300">Studio Hours</p>
+          <p id="contact-hours-value" class="mt-3 font-semibold">Mon - Sat | 11 AM - 8 PM</p>
+          <p id="contact-hours-note" class="mt-2 text-sm text-slate-600 dark:text-slate-300">Sunday reserved for private fittings.</p>
+        </article>
+
+        <article class="card-shell reveal rounded-2xl p-5" style="--delay: 220ms;">
+          <p class="text-[10px] uppercase tracking-[0.24em] text-slate-500 dark:text-slate-300">Address</p>
+          <p id="contact-address-value" class="mt-3 font-semibold">Saddar, Peshawar</p>
+          <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex text-[11px] uppercase tracking-[0.18em] text-atelier-clay font-semibold">Open Map</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" data-page="contact" class="py-20 md:py-24">
+      <div class="max-w-7xl mx-auto px-5 md:px-10 grid xl:grid-cols-[1.1fr_1fr] gap-8">
+        <article class="card-shell reveal rounded-3xl p-7 md:p-9" style="--delay: 80ms;">
+          <p class="text-[11px] uppercase tracking-[0.28em] text-atelier-clay font-semibold">Appointment Request</p>
+          <h2 class="mt-4 font-display text-5xl">Book Your Private Session</h2>
+          <p class="mt-4 text-slate-600 dark:text-slate-300">Fill this form and our team will confirm your fitting slot with styling direction and timeline.</p>
+
+          <form id="appointment-form" class="mt-7 space-y-4" novalidate>
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label for="firstName" class="text-xs uppercase tracking-[0.18em] text-slate-500 dark:text-slate-300">First Name</label>
+                <input id="firstName" name="firstName" required class="field mt-2" placeholder="First name">
+              </div>
+              <div>
+                <label for="lastName" class="text-xs uppercase tracking-[0.18em] text-slate-500 dark:text-slate-300">Last Name</label>
+                <input id="lastName" name="lastName" required class="field mt-2" placeholder="Last name">
+              </div>
+            </div>
+
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label for="email" class="text-xs uppercase tracking-[0.18em] text-slate-500 dark:text-slate-300">Email</label>
+                <input id="email" name="email" type="email" required class="field mt-2" placeholder="you@example.com">
+              </div>
+              <div>
+                <label for="phone" class="text-xs uppercase tracking-[0.18em] text-slate-500 dark:text-slate-300">Phone</label>
+                <input id="phone" name="phone" required class="field mt-2" placeholder="03xx xxxxxxx">
+              </div>
+            </div>
+
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label for="service" class="text-xs uppercase tracking-[0.18em] text-slate-500 dark:text-slate-300">Service Type</label>
+                <select id="service" name="service" required class="field mt-2">
+                  <option value="">Select a service</option>
+                  <option value="wardrobe">Wardrobe Consultation</option>
+                  <option value="bespoke">Bespoke Footwear</option>
+                  <option value="event">Event Styling</option>
+                  <option value="capsule">Capsule Build</option>
+                </select>
+              </div>
+              <div>
+                <label for="date" class="text-xs uppercase tracking-[0.18em] text-slate-500 dark:text-slate-300">Preferred Date</label>
+                <input id="date" name="date" type="date" required class="field mt-2">
+              </div>
+            </div>
+
+            <div>
+              <label for="message" class="text-xs uppercase tracking-[0.18em] text-slate-500 dark:text-slate-300">Project Notes</label>
+              <textarea id="message" name="message" rows="4" class="field mt-2 resize-y" placeholder="Tell us your style goal, event type and timeline."></textarea>
+            </div>
+
+            <label class="flex items-start gap-3 text-sm text-slate-600 dark:text-slate-300">
+              <input id="policy" type="checkbox" required class="mt-1 rounded border-slate-300 text-atelier-clay focus:ring-atelier-champagne">
+              <span>I agree to be contacted for appointment confirmation and service details.</span>
+            </label>
+
+            <button id="submit-appointment" type="submit" class="ui-btn w-full rounded-full py-3.5 bg-atelier-ink dark:bg-atelier-champagne text-white dark:text-atelier-ink uppercase tracking-[0.18em] text-[11px] font-semibold">Submit Appointment Request</button>
+            <p id="form-feedback" class="text-sm"></p>
+          </form>
+        </article>
+
+        <div class="space-y-6">
+          <article class="card-shell reveal rounded-3xl p-7" style="--delay: 130ms;">
+            <p class="text-[11px] uppercase tracking-[0.28em] text-atelier-clay font-semibold">Contact Channels</p>
+            <h3 class="mt-3 font-display text-4xl">Direct Concierge Desk</h3>
+            <p class="mt-3 text-slate-600 dark:text-slate-300">For urgent fittings, call or email and mention your event date. We prioritize requests based on timeline and complexity.</p>
+
+            <div class="mt-6 space-y-4 text-sm">
+              <div class="rounded-2xl border border-black/10 dark:border-white/10 p-4 bg-white/70 dark:bg-white/5">
+                <p class="text-xs uppercase tracking-[0.16em] text-slate-500 dark:text-slate-300">Email</p>
+                <p id="contact-email-panel" class="mt-1 font-semibold">concierge@tjbrandatelier.com</p>
+              </div>
+              <div class="rounded-2xl border border-black/10 dark:border-white/10 p-4 bg-white/70 dark:bg-white/5">
+                <p class="text-xs uppercase tracking-[0.16em] text-slate-500 dark:text-slate-300">Phone</p>
+                <p id="contact-phone-panel" class="mt-1 font-semibold">03220254568</p>
+              </div>
+              <div class="rounded-2xl border border-black/10 dark:border-white/10 p-4 bg-white/70 dark:bg-white/5">
+                <p class="text-xs uppercase tracking-[0.16em] text-slate-500 dark:text-slate-300">Address</p>
+                <p id="contact-address-panel" class="mt-1 font-semibold">Saddar, Peshawar</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="card-shell reveal rounded-3xl overflow-hidden" style="--delay: 180ms;">
+            <img src="https://images.unsplash.com/photo-1507914372368-b2b085b925a1?q=80&w=1400&auto=format&fit=crop" alt="Atelier interior" class="w-full h-52 object-cover">
+            <div class="p-7">
+              <h3 class="font-display text-4xl">Visit The Studio</h3>
+              <p class="mt-3 text-slate-600 dark:text-slate-300">In-person fittings are hosted in a private setup with one-on-one style advisory.</p>
+              <div class="mt-4 text-sm space-y-2 text-slate-700 dark:text-slate-200">
+                <p><i class="fa-solid fa-location-dot text-atelier-clay mr-2"></i> <span id="contact-address-visit">Saddar, Peshawar</span></p>
+                <p><i class="fa-solid fa-clock text-atelier-clay mr-2"></i> <span id="contact-hours-visit">Mon - Sat | 11 AM - 8 PM</span></p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" data-page="contact" class="py-20 border-y border-black/10 dark:border-white/10 bg-white/70 dark:bg-[#0f182d]/70 backdrop-blur-sm">
+      <div class="max-w-4xl mx-auto px-5 md:px-10">
+        <div class="text-center reveal" style="--delay: 70ms;">
+          <p class="text-[11px] uppercase tracking-[0.28em] text-atelier-clay font-semibold">Support</p>
+          <h2 class="mt-4 font-display text-5xl md:text-6xl">Frequently Asked Questions</h2>
+        </div>
+
+        <div class="mt-10 space-y-4">
+          <article class="faq-item card-shell reveal rounded-2xl" style="--delay: 120ms;" data-open="false">
+            <button type="button" class="faq-toggle w-full text-left px-5 py-4 flex items-center justify-between">
+              <span class="font-semibold">How long does bespoke production take?</span>
+              <i class="faq-icon fa-solid fa-plus text-atelier-clay"></i>
+            </button>
+            <div class="faq-answer px-5">
+              <div>
+                <p class="pb-5 text-sm text-slate-600 dark:text-slate-300">Typical cycle is 3 to 5 weeks depending on selected material and fitting complexity.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="faq-item card-shell reveal rounded-2xl" style="--delay: 170ms;" data-open="false">
+            <button type="button" class="faq-toggle w-full text-left px-5 py-4 flex items-center justify-between">
+              <span class="font-semibold">Do you offer remote appointments?</span>
+              <i class="faq-icon fa-solid fa-plus text-atelier-clay"></i>
+            </button>
+            <div class="faq-answer px-5">
+              <div>
+                <p class="pb-5 text-sm text-slate-600 dark:text-slate-300">Yes. We run remote consults on Zoom and WhatsApp, followed by guided measurement sheets.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="faq-item card-shell reveal rounded-2xl" style="--delay: 220ms;" data-open="false">
+            <button type="button" class="faq-toggle w-full text-left px-5 py-4 flex items-center justify-between">
+              <span class="font-semibold">Can I modify my package later?</span>
+              <i class="faq-icon fa-solid fa-plus text-atelier-clay"></i>
+            </button>
+            <div class="faq-answer px-5">
+              <div>
+                <p class="pb-5 text-sm text-slate-600 dark:text-slate-300">Absolutely. Our concierge can upgrade services and timelines after your first session.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-black/10 dark:border-white/10 bg-[#0f182d] text-white py-14">
+    <div class="max-w-7xl mx-auto px-5 md:px-10 grid md:grid-cols-3 gap-10 items-start">
+      <div>
+        <a href="index.html" class="inline-flex items-center gap-3" aria-label="TJ Brand Atelier home">
+          <img src="tjlogo.png" alt="TJ Brand logo" class="brand-logo">
+          <div>
+            <p class="font-display text-2xl text-atelier-champagne leading-none">TJ Brand</p>
+            <p class="text-[10px] uppercase tracking-[0.28em] text-white/70">Luxury House</p>
+          </div>
+        </a>
+        <p class="mt-4 text-sm text-white/70 max-w-sm">Built for clients who value visual authority, precision tailoring and long-term wardrobe architecture.</p>
+      </div>
+
+      <div class="space-y-4 text-sm text-white/75">
+        <p class="text-[10px] uppercase tracking-[0.25em] text-white/50">Quick Links</p>
+        <a href="#shop" data-route-link="shop" class="block py-2 hover:text-atelier-champagne transition">Shop Collection</a>
+        <a href="#contact" data-route-link="contact" class="block py-2 hover:text-atelier-champagne transition">Contact Concierge</a>
+        <a href="#collections" data-route-link="collections" class="block py-2 hover:text-atelier-champagne transition">Category Worlds</a>
+      </div>
+
+      <div class="space-y-3 text-sm text-white/75">
+        <p class="text-[10px] uppercase tracking-[0.25em] text-white/50">Social</p>
+        <a href="https://www.instagram.com/tariqjameel_ce?igsh=MWo5ZzBxOGk5cDBxaQ==" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-atelier-champagne transition"><i class="fa-brands fa-instagram"></i> Instagram</a>
+        <a href="https://www.facebook.com/share/p/18YiMPBSUy/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-atelier-champagne transition"><i class="fa-brands fa-facebook-f"></i> Facebook</a>
+        <a href="https://wa.me/qr/4BRKX54J6G3ZN1" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-atelier-champagne transition"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+      </div>
+    </div>
+
+    <p class="mt-10 text-center text-[10px] uppercase tracking-[0.28em] text-white/45">Copyright <span id="year-stamp"></span> TJ Brand Atelier | Premium Frontend Experience</p>
+  </footer>
+
+  <script>
+    (function () {
+      const STORAGE_KEYS = {
+        theme: "tj_theme_v4",
+        cart: "tj_cart_v4",
+        catalog: "tj_catalog_v1",
+        adminUnlocked: "tj_admin_unlock_v1"
+      };
+
+      const ADMIN_PASSCODE = "tjadmin123";
+
+      const defaultCategories = [
+        {
+          id: "men",
+          name: "Men",
+          title: "Sharp Tailoring",
+          image: "https://images.unsplash.com/photo-1617127365659-c47fa864d8bc?q=80&w=1400&auto=format&fit=crop"
+        },
+        {
+          id: "women",
+          name: "Women",
+          title: "Evening Couture",
+          image: "https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=1400&auto=format&fit=crop"
+        },
+        {
+          id: "footwear",
+          name: "Footwear",
+          title: "Handmade Shoes",
+          image: "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?q=80&w=1400&auto=format&fit=crop"
+        },
+        {
+          id: "men-casual",
+          name: "Men Casual",
+          title: "Everyday Comfortable Wear",
+          image: "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?q=80&w=1400&auto=format&fit=crop"
+        },
+        {
+          id: "accessories",
+          name: "Handbags",
+          title: "Women's Handbags & Accessories",
+          image: "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?q=80&w=1400&auto=format&fit=crop"
+        },
+        {
+          id: "outerwear",
+          name: "Outerwear",
+          title: "Coats & Overcoats",
+          image: "men%20dress.png/Create_a_premium_202604172102.png"
+        },
+        {
+          id: "evening-wear",
+          name: "Evening",
+          title: "Evening Dressing",
+          image: "femaldress.png/Create_a_luxurious_202604172101.png"
+        }
+      ];
+
+      const defaultProducts = [
+        {
+          id: 101,
+          name: "Regent Midnight Tuxedo",
+          category: "men",
+          price: 214000,
+          image: "https://images.unsplash.com/photo-1593030761757-71fae45fa0e7?q=80&w=1200&auto=format&fit=crop",
+          badge: "Men Tailoring",
+          description: "Pure wool tuxedo with sculpted shoulders and satin peak lapel finishing for formal authority."
+        },
+        {
+          id: 102,
+          name: "Orchid Draped Gown",
+          category: "women",
+          price: 186000,
+          image: "https://images.unsplash.com/photo-1495385794356-15371f348c31?q=80&w=1200&auto=format&fit=crop",
+          badge: "Women Couture",
+          description: "Hand-draped satin gown with fluid fall and precision waist architecture for evening events."
+        },
+        {
+          id: 103,
+          name: "Imperial Leather Oxford",
+          category: "footwear",
+          price: 124000,
+          image: "https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?q=80&w=1200&auto=format&fit=crop",
+          badge: "Footwear",
+          description: "Full-grain oxford with layered patina and hand-stitched sole designed for boardroom and gala use."
+        },
+        {
+          id: 104,
+          name: "Noir Architectural Blazer",
+          category: "men",
+          price: 162000,
+          image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=1200&auto=format&fit=crop",
+          badge: "Men Tailoring",
+          description: "Semi-canvas blazer with angular chest line, dual inner support and breathable finish."
+        },
+        {
+          id: 105,
+          name: "Velvet Meridian Set",
+          category: "women",
+          price: 172500,
+          image: "https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1200&auto=format&fit=crop",
+          badge: "Women Couture",
+          description: "Two-piece velvet set balancing movement and structure, made for high-profile receptions."
+        },
+        {
+          id: 106,
+          name: "Monarch Chelsea Boot",
+          category: "footwear",
+          price: 136000,
+          image: "https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=1200&auto=format&fit=crop",
+          badge: "Footwear",
+          description: "Polished leather chelsea boot featuring custom arch support and anti-slip sole geometry."
+        },
+        {
+          id: 201,
+          name: "Everyday Casual Jacket",
+          category: "men-casual",
+          price: 45000,
+          image: "femal%20%2Cdress.png/Create_a_premium_202604172247.png",
+          badge: "Casual Wear",
+          description: "Lightweight jacket, suitable for everyday wear."
+        },
+        {
+          id: 202,
+          name: "Comfortable Shirt",
+          category: "men-casual",
+          price: 18000,
+          image: "men%20drees%2Cpng/Create_a_premium_202604172255.png",
+          badge: "Casual Wear",
+          description: "Soft fabric with a comfortable fit."
+        },
+        {
+          id: 203,
+          name: "Comfortable Pants",
+          category: "men-casual",
+          price: 22000,
+          image: "men%20pant.png/Create_a_premium_202604172319.png",
+          badge: "Casual Wear",
+          description: "Comfortable and durable pants, ideal for everyday use."
+        },
+        {
+          id: 204,
+          name: "Classic Handbag",
+          category: "accessories",
+          price: 32000,
+          image: "https://source.unsplash.com/1200x800/?handbag-leather",
+          badge: "Handbag",
+          description: "Elegant handcrafted handbag, suitable for daily use and gatherings."
+        },
+        {
+          id: 205,
+          name: "Comfort Waist Bag",
+          category: "accessories",
+          price: 12000,
+          image: "https://source.unsplash.com/1200x800/?fanny-pack",
+          badge: "Accessories",
+          description: "Comfortable waist bag, ideal for travel."
+        },
+        {
+          id: 206,
+          name: "Night Clutch",
+          category: "accessories",
+          price: 9000,
+          image: "https://source.unsplash.com/1200x800/?clutch-bag",
+          badge: "Clutch",
+          description: "Elegant clutch for evening events."
+        },
+        {
+          id: 207,
+          name: "Style Pin",
+          category: "accessories",
+          price: 3500,
+          image: "https://source.unsplash.com/1200x800/?brooch",
+          badge: "Accessories",
+          description: "Elegant style pin that completes an outfit."
+        }
+      ];
+
+      const defaultContact = {
+        email: "concierge@tjbrandatelier.com",
+        phone: "03220254568",
+        hours: "Mon - Sat | 11 AM - 8 PM",
+        hoursNote: "Sunday reserved for private fittings.",
+        address: "Saddar, Peshawar"
+      };
+
+      const state = {
+        activeRoute: "home",
+        activeCategory: "all",
+        query: "",
+        activeProductId: null,
+        cart: [],
+        categories: [],
+        contact: deepClone(defaultContact),
+        adminUnlocked: false
+      };
+
+      let products = deepClone(defaultProducts);
+
+      const root = document.documentElement;
+      const nav = document.getElementById("site-nav");
+      const pageSections = Array.from(document.querySelectorAll("[data-page]"));
+      const routeLinks = Array.from(document.querySelectorAll("[data-route-link]"));
+
+      const collectionsGrid = document.getElementById("collections-grid");
+      const grid = document.getElementById("products-grid");
+      const filterChipsContainer = document.getElementById("filter-chips");
+      const searchInput = document.getElementById("product-search");
+
+      const cartShell = document.getElementById("cart-shell");
+      const cartList = document.getElementById("cart-items");
+      const cartCount = document.getElementById("cart-count");
+      const cartSubtotal = document.getElementById("cart-subtotal");
+      const openCartBtn = document.getElementById("open-cart");
+      const closeCartBtn = document.getElementById("close-cart");
+
+      const modal = document.getElementById("product-modal");
+      const modalImage = document.getElementById("modal-image");
+      const modalName = document.getElementById("modal-name");
+      const modalBadge = document.getElementById("modal-badge");
+      const modalPrice = document.getElementById("modal-price");
+      const modalDescription = document.getElementById("modal-description");
+      const closeModalBtn = document.getElementById("close-product-modal");
+      const modalAddCartBtn = document.getElementById("modal-add-cart");
+
+      const mobileMenuShell = document.getElementById("mobile-menu-shell");
+      const openMobileMenuBtn = document.getElementById("open-mobile-menu");
+      const closeMobileMenuBtn = document.getElementById("close-mobile-menu");
+      const mobileNavLinks = Array.from(document.querySelectorAll(".mobile-nav-link"));
+
+      const adminShell = document.getElementById("admin-shell");
+      const openAdminBtn = document.getElementById("open-admin");
+      const closeAdminBtn = document.getElementById("close-admin");
+      const adminLockView = document.getElementById("admin-lock-view");
+      const adminWorkspace = document.getElementById("admin-workspace");
+      const adminLoginForm = document.getElementById("admin-login-form");
+      const adminPasscodeInput = document.getElementById("admin-passcode");
+      const adminLoginFeedback = document.getElementById("admin-login-feedback");
+
+      const adminStatProducts = document.getElementById("admin-stat-products");
+      const adminStatCategories = document.getElementById("admin-stat-categories");
+      const adminStatValue = document.getElementById("admin-stat-value");
+
+      const adminProductForm = document.getElementById("admin-product-form");
+      const adminProductMode = document.getElementById("admin-product-mode");
+      const adminProductEditId = document.getElementById("admin-product-edit-id");
+      const adminProductName = document.getElementById("admin-product-name");
+      const adminProductCategory = document.getElementById("admin-product-category");
+      const adminProductPrice = document.getElementById("admin-product-price");
+      const adminProductBadge = document.getElementById("admin-product-badge");
+      const adminProductImage = document.getElementById("admin-product-image");
+      const adminProductDescription = document.getElementById("admin-product-description");
+      const adminProductResetBtn = document.getElementById("admin-product-reset");
+      const adminProductFeedback = document.getElementById("admin-product-feedback");
+
+      const adminCategoryForm = document.getElementById("admin-category-form");
+      const adminCategoryMode = document.getElementById("admin-category-mode");
+      const adminCategoryEditId = document.getElementById("admin-category-edit-id");
+      const adminCategoryId = document.getElementById("admin-category-id");
+      const adminCategoryName = document.getElementById("admin-category-name");
+      const adminCategoryTitle = document.getElementById("admin-category-title");
+      const adminCategoryImage = document.getElementById("admin-category-image");
+      const adminCategoryResetBtn = document.getElementById("admin-category-reset");
+      const adminCategoryFeedback = document.getElementById("admin-category-feedback");
+
+      const adminContactForm = document.getElementById("admin-contact-form");
+      const adminContactEmail = document.getElementById("admin-contact-email");
+      const adminContactPhone = document.getElementById("admin-contact-phone");
+      const adminContactHours = document.getElementById("admin-contact-hours");
+      const adminContactHoursNote = document.getElementById("admin-contact-hours-note");
+      const adminContactAddress = document.getElementById("admin-contact-address");
+      const adminContactFeedback = document.getElementById("admin-contact-feedback");
+      const adminLogoutBtn = document.getElementById("admin-logout");
+      const adminResetCatalogBtn = document.getElementById("admin-reset-catalog");
+
+      const adminProductList = document.getElementById("admin-product-list");
+      const adminCategoryList = document.getElementById("admin-category-list");
+
+      const themeToggle = document.getElementById("theme-toggle");
+      const themeIcon = document.getElementById("theme-icon");
+      const toastContainer = document.getElementById("toast-container");
+      const focusSearchBtn = document.getElementById("focus-search");
+      const newsletterForm = document.getElementById("newsletter-form");
+      const newsletterNote = document.getElementById("newsletter-note");
+      const appointmentForm = document.getElementById("appointment-form");
+      const submitAppointmentBtn = document.getElementById("submit-appointment");
+      const formFeedback = document.getElementById("form-feedback");
+      const dateInput = document.getElementById("date");
+
+      document.getElementById("year-stamp").textContent = new Date().getFullYear();
+
+      function deepClone(value) {
+        return JSON.parse(JSON.stringify(value));
+      }
+
+      function normalizeCategoryId(value) {
+        return String(value || "")
+          .toLowerCase()
+          .trim()
+          .replace(/[^a-z0-9]+/g, "-")
+          .replace(/^-+|-+$/g, "");
+      }
+
+      function sanitize(value) {
+        return String(value)
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;")
+          .replace(/\"/g, "&quot;")
+          .replace(/'/g, "&#39;");
+      }
+
+      function formatPrice(value) {
+        return new Intl.NumberFormat("en-PK", {
+          style: "currency",
+          currency: "PKR",
+          maximumFractionDigits: 0
+        }).format(value);
+      }
+
+      function categoryExists(id) {
+        return state.categories.some(function (category) {
+          return category.id === id;
+        });
+      }
+
+      function alignProductsWithCategories(rawProducts) {
+        const fallbackCategory = state.categories[0] ? state.categories[0].id : "general";
+
+        return rawProducts.map(function (entry, index) {
+          const normalized = {
+            id: Number(entry.id),
+            name: String(entry.name || "").trim(),
+            category: String(entry.category || "").trim(),
+            price: Number(entry.price),
+            image: String(entry.image || "").trim(),
+            badge: String(entry.badge || "").trim(),
+            description: String(entry.description || "").trim()
+          };
+
+          if (!Number.isFinite(normalized.id)) {
+            normalized.id = 100 + index;
+          }
+
+          if (!categoryExists(normalized.category)) {
+            normalized.category = fallbackCategory;
+          }
+
+          return normalized;
+        }).filter(function (entry) {
+          return entry.name && entry.category && entry.image && entry.description && Number.isFinite(entry.price) && entry.price > 0;
+        });
+      }
+
+      function loadCatalog() {
+        let parsed = null;
+
+        try {
+          parsed = JSON.parse(localStorage.getItem(STORAGE_KEYS.catalog) || "null");
+        } catch (_) {
+          parsed = null;
+        }
+
+        const fallbackCategories = deepClone(defaultCategories);
+        const fallbackProducts = deepClone(defaultProducts);
+        const fallbackContact = deepClone(defaultContact);
+
+        const loadedCategories = Array.isArray(parsed && parsed.categories)
+          ? parsed.categories.map(function (entry) {
+            return {
+              id: normalizeCategoryId(entry && entry.id),
+              name: String((entry && entry.name) || "").trim(),
+              title: String((entry && entry.title) || "").trim(),
+              image: String((entry && entry.image) || "").trim()
+            };
+          }).filter(function (entry) {
+            return entry.id && entry.name && entry.title && entry.image;
+          })
+          : [];
+
+        state.categories = loadedCategories.length ? loadedCategories : fallbackCategories;
+
+        const loadedProducts = Array.isArray(parsed && parsed.products)
+          ? alignProductsWithCategories(parsed.products)
+          : [];
+
+        products = loadedProducts.length ? loadedProducts : alignProductsWithCategories(fallbackProducts);
+
+        const loadedContact = parsed && typeof parsed.contact === "object" ? parsed.contact : {};
+        state.contact = {
+          email: String(loadedContact.email || fallbackContact.email).trim(),
+          phone: String(loadedContact.phone || fallbackContact.phone).trim(),
+          hours: String(loadedContact.hours || fallbackContact.hours).trim(),
+          hoursNote: String(loadedContact.hoursNote || fallbackContact.hoursNote).trim(),
+          address: String(loadedContact.address || fallbackContact.address).trim()
+        };
+      }
+
+      function saveCatalog() {
+        localStorage.setItem(STORAGE_KEYS.catalog, JSON.stringify({
+          categories: state.categories,
+          products: products,
+          contact: state.contact
+        }));
+      }
+
+      function loadCart() {
+        try {
+          const parsed = JSON.parse(localStorage.getItem(STORAGE_KEYS.cart) || "[]");
+          return Array.isArray(parsed) ? parsed : [];
+        } catch (_) {
+          return [];
+        }
+      }
+
+      function saveCart() {
+        localStorage.setItem(STORAGE_KEYS.cart, JSON.stringify(state.cart));
+      }
+
+      function showToast(message, type) {
+        const toast = document.createElement("article");
+        const tone = type === "error" ? "border-red-500" : "border-atelier-pine";
+
+        toast.className = "toast-item rounded-xl border-l-4 " + tone + " bg-white dark:bg-[#1a2440] px-4 py-3 shadow-soft";
+        toast.innerHTML = "<p class='text-[11px] uppercase tracking-[0.18em] font-semibold text-slate-700 dark:text-slate-200'>" + sanitize(message) + "</p>";
+
+        toastContainer.appendChild(toast);
+        setTimeout(function () {
+          toast.remove();
+        }, 2800);
+      }
+
+      function lockBody(lock) {
+        document.body.classList.toggle("overflow-hidden", lock);
+      }
+
+      function getRouteFromHash() {
+        return String(window.location.hash || "")
+          .replace("#", "")
+          .toLowerCase()
+          .trim();
+      }
+
+      function updateRouteLinks() {
+        routeLinks.forEach(function (link) {
+          const active = link.dataset.routeLink === state.activeRoute;
+          link.classList.toggle("route-link-active", active);
+
+          if (active) {
+            link.setAttribute("aria-current", "page");
+          } else {
+            link.removeAttribute("aria-current");
+          }
+        });
+      }
+
+      function applyRoute(route, options) {
+        const opts = options || {};
+        const allowedRoutes = ["home", "collections", "shop", "contact"];
+        const safeRoute = allowedRoutes.indexOf(route) > -1 ? route : "home";
+
+        state.activeRoute = safeRoute;
+
+        pageSections.forEach(function (section) {
+          section.classList.toggle("is-hidden", section.dataset.page !== safeRoute);
+        });
+
+        updateRouteLinks();
+
+        if (opts.scroll !== false) {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+
+        applyRevealAnimation();
+      }
+
+      function getCategoryById(id) {
+        return state.categories.find(function (category) {
+          return category.id === id;
+        }) || null;
+      }
+
+      function getProductBadge(product) {
+        if (product.badge) {
+          return product.badge;
+        }
+
+        const category = getCategoryById(product.category);
+        return category ? category.name + " Collection" : "Curated Item";
+      }
+
+      function syncFilterButtons() {
+        Array.from(document.querySelectorAll("[data-filter]")).forEach(function (button) {
+          const active = button.dataset.filter === state.activeCategory;
+          button.classList.toggle("active", active);
+        });
+      }
+
+      function renderFilterChips() {
+        if (!filterChipsContainer) {
+          return;
+        }
+
+        const chips = [
+          "<button type='button' data-filter='all' class='chip-btn'>All</button>"
+        ];
+
+        state.categories.forEach(function (category) {
+          chips.push("<button type='button' data-filter='" + sanitize(category.id) + "' class='chip-btn'>" + sanitize(category.name) + "</button>");
+        });
+
+        filterChipsContainer.innerHTML = chips.join("");
+        syncFilterButtons();
+      }
+
+      function renderCollections() {
+        if (!collectionsGrid) {
+          return;
+        }
+
+        if (!state.categories.length) {
+          collectionsGrid.innerHTML = "<div class='col-span-full card-shell rounded-3xl p-10 text-center'><p class='text-[11px] uppercase tracking-[0.24em] text-slate-500 dark:text-slate-300'>No categories available</p><h3 class='font-display text-4xl mt-3'>Add categories from admin panel</h3></div>";
+          return;
+        }
+
+        collectionsGrid.innerHTML = state.categories.map(function (category, index) {
+          const sequence = String(index + 1).padStart(2, "0");
+
+          return "<button type='button' data-filter-target='" + sanitize(category.id) + "' class='category-tile reveal text-left' style='--delay:" + (120 + (index * 60)) + "ms;' aria-label='View " + sanitize(category.name) + " collection'>" +
+            "<img src='" + sanitize(category.image) + "' alt='" + sanitize(category.name) + " collection' class='absolute inset-0 w-full h-full object-cover'>" +
+            "<div class='relative z-10 h-full p-6 flex flex-col justify-end text-white'>" +
+              "<p class='text-[10px] tracking-[0.24em] uppercase text-atelier-champagne'>" + sequence + " | " + sanitize(category.name) + "</p>" +
+              "<h3 class='font-display text-3xl mt-2'>" + sanitize(category.title) + "</h3>" +
+            "</div>" +
+          "</button>";
+        }).join("");
+
+        applyRevealAnimation();
+      }
+
+      function getVisibleProducts() {
+        return products.filter(function (product) {
+          const categoryMatch = state.activeCategory === "all" || product.category === state.activeCategory;
+          const query = state.query.trim().toLowerCase();
+          const text = [product.name, product.category, product.badge, product.description].join(" ").toLowerCase();
+          const queryMatch = query === "" || text.includes(query);
+          return categoryMatch && queryMatch;
+        });
+      }
+
+      function renderProducts() {
+        const visibleProducts = getVisibleProducts();
+
+        if (!visibleProducts.length) {
+          grid.innerHTML = "<div class='col-span-full card-shell rounded-3xl p-10 text-center'><p class='text-[11px] uppercase tracking-[0.24em] text-slate-500 dark:text-slate-300'>No product matched your search</p><h3 class='font-display text-4xl mt-3'>Try another keyword or category</h3></div>";
+          return;
+        }
+
+        grid.innerHTML = visibleProducts.map(function (product, index) {
+          const badge = getProductBadge(product);
+
+          return "<article class='card-shell rounded-3xl overflow-hidden reveal' style='--delay:" + (index * 70) + "ms'>" +
+            "<div class='relative aspect-[4/5] overflow-hidden'>" +
+              "<img src='" + sanitize(product.image) + "' alt='" + sanitize(product.name) + "' class='w-full h-full object-cover transition duration-700 hover:scale-105'>" +
+              "<span class='absolute top-4 left-4 px-3 py-1.5 rounded-full bg-black/70 text-[10px] uppercase tracking-[0.2em] text-atelier-champagne'>" + sanitize(badge) + "</span>" +
+            "</div>" +
+            "<div class='p-6'>" +
+              "<div class='flex items-start justify-between gap-4'>" +
+                "<div><h3 class='font-display text-3xl leading-tight'>" + sanitize(product.name) + "</h3><p class='mt-2 text-sm text-slate-600 dark:text-slate-300 line-clamp-2'>" + sanitize(product.description) + "</p></div>" +
+                "<p class='font-display text-2xl text-atelier-champagne shrink-0'>" + formatPrice(product.price) + "</p>" +
+              "</div>" +
+              "<div class='mt-6 grid grid-cols-2 gap-3'>" +
+                "<button type='button' data-action='quick-view' data-id='" + product.id + "' class='ui-btn rounded-full border border-slate-300 dark:border-white/20 py-3 text-[11px] uppercase tracking-[0.16em] font-semibold'>Quick View</button>" +
+                "<button type='button' data-action='add-cart' data-id='" + product.id + "' class='ui-btn rounded-full bg-atelier-ink dark:bg-atelier-champagne text-white dark:text-atelier-ink py-3 text-[11px] uppercase tracking-[0.16em] font-semibold'>Add To Bag</button>" +
+              "</div>" +
+            "</div>" +
+          "</article>";
+        }).join("");
+
+        applyRevealAnimation();
+      }
+
+      function addToCart(item) {
+        const badge = item.badge || getProductBadge(item);
+
+        const existingItem = state.cart.find(function (entry) {
+          return entry.id === item.id;
+        });
+
+        if (existingItem) {
+          existingItem.qty += 1;
+        } else {
+          state.cart.push({
+            id: item.id,
+            name: item.name,
+            price: item.price,
+            image: item.image,
+            badge: badge,
+            qty: 1
+          });
+        }
+
+        saveCart();
+        renderCart();
+        showToast(item.name + " added to bag");
+      }
+
+      function removeFromCart(id) {
+        state.cart = state.cart.filter(function (item) {
+          return item.id !== id;
+        });
+        saveCart();
+        renderCart();
+      }
+
+      function changeQty(id, delta) {
+        const item = state.cart.find(function (entry) {
+          return entry.id === id;
+        });
+
+        if (!item) {
+          return;
+        }
+
+        item.qty += delta;
+
+        if (item.qty <= 0) {
+          removeFromCart(id);
+          return;
+        }
+
+        saveCart();
+        renderCart();
+      }
+
+      function renderCart() {
+        const count = state.cart.reduce(function (total, item) {
+          return total + item.qty;
+        }, 0);
+
+        const subtotal = state.cart.reduce(function (total, item) {
+          return total + (item.price * item.qty);
+        }, 0);
+
+        cartCount.textContent = String(count);
+        cartSubtotal.textContent = formatPrice(subtotal);
+
+        if (!state.cart.length) {
+          cartList.innerHTML = "<div class='rounded-2xl border border-dashed border-slate-300 dark:border-white/20 p-5 text-center'><p class='text-sm text-slate-500 dark:text-slate-300'>Your bag is empty. Add products from the collection.</p></div>";
+          return;
+        }
+
+        cartList.innerHTML = state.cart.map(function (item) {
+          return "<article class='rounded-2xl border border-black/10 dark:border-white/10 p-4 bg-white/70 dark:bg-white/5'>" +
+            "<div class='flex gap-3'>" +
+              "<img src='" + sanitize(item.image) + "' alt='" + sanitize(item.name) + "' class='w-16 h-16 rounded-xl object-cover'>" +
+              "<div class='flex-1 min-w-0'>" +
+                "<h4 class='font-semibold text-sm truncate'>" + sanitize(item.name) + "</h4>" +
+                "<p class='text-xs text-slate-500 dark:text-slate-300 mt-1'>" + sanitize(item.badge || "Curated Item") + "</p>" +
+                "<p class='font-display text-xl text-atelier-champagne mt-1'>" + formatPrice(item.price) + "</p>" +
+              "</div>" +
+            "</div>" +
+            "<div class='mt-3 flex items-center justify-between'>" +
+              "<div class='inline-flex items-center rounded-full border border-slate-300 dark:border-white/20 overflow-hidden'>" +
+                "<button data-cart-action='decrease' data-id='" + sanitize(item.id) + "' class='px-3 py-1.5 text-sm hover:bg-black/5 dark:hover:bg-white/10'>-</button>" +
+                "<span class='px-3 py-1.5 text-sm border-x border-slate-300 dark:border-white/20'>" + item.qty + "</span>" +
+                "<button data-cart-action='increase' data-id='" + sanitize(item.id) + "' class='px-3 py-1.5 text-sm hover:bg-black/5 dark:hover:bg-white/10'>+</button>" +
+              "</div>" +
+              "<button data-cart-action='remove' data-id='" + sanitize(item.id) + "' class='text-xs uppercase tracking-[0.16em] text-slate-500 dark:text-slate-300 hover:text-red-500'>Remove</button>" +
+            "</div>" +
+          "</article>";
+        }).join("");
+      }
+
+      function openCart() {
+        closeModal();
+        closeMobileMenu();
+        closeAdmin();
+        cartShell.classList.add("drawer-open");
+        lockBody(true);
+      }
+
+      function closeCart() {
+        cartShell.classList.remove("drawer-open");
+        lockBody(false);
+      }
+
+      function openModal(product) {
+        state.activeProductId = product.id;
+        modalImage.src = product.image;
+        modalImage.alt = product.name;
+        modalName.textContent = product.name;
+        modalBadge.textContent = product.badge;
+        modalPrice.textContent = formatPrice(product.price);
+        modalDescription.textContent = product.description;
+        modalBadge.textContent = getProductBadge(product);
+
+        closeCart();
+        closeMobileMenu();
+        closeAdmin();
+        modal.classList.add("modal-open");
+        lockBody(true);
+      }
+
+      function closeModal() {
+        modal.classList.remove("modal-open");
+        lockBody(false);
+      }
+
+      function openMobileMenu() {
+        closeCart();
+        closeModal();
+        closeAdmin();
+        mobileMenuShell.classList.add("menu-open");
+        lockBody(true);
+      }
+
+      function closeMobileMenu() {
+        mobileMenuShell.classList.remove("menu-open");
+        lockBody(false);
+      }
+
+      function openAdmin() {
+        closeCart();
+        closeModal();
+        closeMobileMenu();
+        adminShell.classList.add("admin-open");
+        lockBody(true);
+
+        if (!state.adminUnlocked && adminPasscodeInput) {
+          adminPasscodeInput.focus();
+        }
+      }
+
+      function closeAdmin() {
+        adminShell.classList.remove("admin-open");
+        lockBody(false);
+      }
+
+      function setCategory(category) {
+        const safeCategory = category === "all" || categoryExists(category) ? category : "all";
+        state.activeCategory = safeCategory;
+        syncFilterButtons();
+        renderProducts();
+      }
+
+      function applyTheme(mode) {
+        const useDark = mode === "dark";
+        root.classList.toggle("dark", useDark);
+        themeIcon.className = useDark ? "fa-solid fa-sun" : "fa-solid fa-moon";
+        themeToggle.setAttribute("aria-label", useDark ? "Switch to light theme" : "Switch to dark theme");
+      }
+
+      function initTheme() {
+        const savedTheme = localStorage.getItem(STORAGE_KEYS.theme);
+        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        const mode = savedTheme || (prefersDark ? "dark" : "light");
+        applyTheme(mode);
+      }
+
+      function updateNavStyle() {
+        nav.classList.toggle("nav-scrolled", window.scrollY > 18);
+      }
+
+      let revealObserver;
+
+      function applyRevealAnimation() {
+        if (!("IntersectionObserver" in window)) {
+          document.querySelectorAll(".reveal").forEach(function (node) {
+            node.classList.add("visible");
+          });
+          return;
+        }
+
+        if (revealObserver) {
+          revealObserver.disconnect();
+        }
+
+        revealObserver = new IntersectionObserver(function (entries, observer) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) {
+              return;
+            }
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll(".reveal:not(.visible)").forEach(function (node) {
+          revealObserver.observe(node);
+        });
+      }
+
+      async function copyText(value) {
+        if (!navigator.clipboard || typeof navigator.clipboard.writeText !== "function") {
+          showToast("Clipboard not available in this browser", "error");
+          return;
+        }
+
+        try {
+          await navigator.clipboard.writeText(value);
+          showToast("Copied to clipboard");
+        } catch (_) {
+          showToast("Unable to copy", "error");
+        }
+      }
+
+      function validateAppointmentForm() {
+        if (!appointmentForm) {
+          return "";
+        }
+
+        const data = new FormData(appointmentForm);
+        const requiredFields = ["firstName", "lastName", "email", "phone", "service", "date"];
+
+        for (const key of requiredFields) {
+          const value = String(data.get(key) || "").trim();
+          if (!value) {
+            return "Please complete all required fields.";
+          }
+        }
+
+        const email = String(data.get("email") || "").trim();
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+          return "Please enter a valid email address.";
+        }
+
+        const selectedDate = String(data.get("date") || "");
+        const today = new Date();
+        const minDate = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+        const appointmentDate = new Date(selectedDate + "T00:00:00");
+
+        if (Number.isNaN(appointmentDate.getTime()) || appointmentDate < minDate) {
+          return "Please choose a future appointment date.";
+        }
+
+        if (!document.getElementById("policy")?.checked) {
+          return "Please accept the contact policy before submitting.";
+        }
+
+        return "";
+      }
+
+      function setText(id, value) {
+        const node = document.getElementById(id);
+        if (node) {
+          node.textContent = value;
+        }
+      }
+
+      function renderContactInfo() {
+        setText("contact-email-value", state.contact.email);
+        setText("contact-phone-value", state.contact.phone);
+        setText("contact-hours-value", state.contact.hours);
+        setText("contact-hours-note", state.contact.hoursNote);
+        setText("contact-address-value", state.contact.address);
+
+        setText("contact-email-panel", state.contact.email);
+        setText("contact-phone-panel", state.contact.phone);
+        setText("contact-address-panel", state.contact.address);
+
+        setText("contact-address-visit", state.contact.address);
+        setText("contact-hours-visit", state.contact.hours);
+
+        const copyEmailBtn = document.getElementById("copy-email-btn");
+        const copyPhoneBtn = document.getElementById("copy-phone-btn");
+
+        if (copyEmailBtn) {
+          copyEmailBtn.dataset.copy = state.contact.email;
+        }
+
+        if (copyPhoneBtn) {
+          copyPhoneBtn.dataset.copy = state.contact.phone.replace(/\s+/g, "");
+        }
+      }
+
+      function renderAdminStats() {
+        if (!adminStatProducts || !adminStatCategories || !adminStatValue) {
+          return;
+        }
+
+        adminStatProducts.textContent = String(products.length);
+        adminStatCategories.textContent = String(state.categories.length);
+
+        const catalogValue = products.reduce(function (total, product) {
+          return total + product.price;
+        }, 0);
+
+        adminStatValue.textContent = formatPrice(catalogValue);
+      }
+
+      function renderAdminCategoryOptions() {
+        if (!adminProductCategory) {
+          return;
+        }
+
+        const previousValue = adminProductCategory.value;
+
+        adminProductCategory.innerHTML = state.categories.map(function (category) {
+          return "<option value='" + sanitize(category.id) + "'>" + sanitize(category.name) + "</option>";
+        }).join("");
+
+        if (categoryExists(previousValue)) {
+          adminProductCategory.value = previousValue;
+        }
+      }
+
+      function renderAdminProductList() {
+        if (!adminProductList) {
+          return;
+        }
+
+        if (!products.length) {
+          adminProductList.innerHTML = "<div class='rounded-2xl border border-dashed border-slate-300 dark:border-white/20 p-4 text-sm text-slate-500 dark:text-slate-300'>No products found.</div>";
+          return;
+        }
+
+        adminProductList.innerHTML = products.map(function (product) {
+          return "<article class='rounded-2xl border border-black/10 dark:border-white/10 p-4 bg-white/70 dark:bg-white/5'>" +
+            "<div class='flex items-start justify-between gap-3'>" +
+              "<div class='min-w-0'>" +
+                "<p class='font-semibold truncate'>" + sanitize(product.name) + "</p>" +
+                "<p class='text-xs text-slate-500 dark:text-slate-300 mt-1'>" + sanitize(getProductBadge(product)) + " | " + formatPrice(product.price) + "</p>" +
+              "</div>" +
+              "<div class='flex gap-2'>" +
+                "<button type='button' data-admin-product-action='edit' data-id='" + product.id + "' class='ui-btn rounded-full px-3 py-1.5 border border-slate-300 dark:border-white/20 text-[10px] uppercase tracking-[0.15em]'>Edit</button>" +
+                "<button type='button' data-admin-product-action='delete' data-id='" + product.id + "' class='ui-btn rounded-full px-3 py-1.5 border border-red-300 text-red-600 dark:text-red-300 dark:border-red-400/40 text-[10px] uppercase tracking-[0.15em]'>Delete</button>" +
+              "</div>" +
+            "</div>" +
+          "</article>";
+        }).join("");
+      }
+
+      function renderAdminCategoryList() {
+        if (!adminCategoryList) {
+          return;
+        }
+
+        if (!state.categories.length) {
+          adminCategoryList.innerHTML = "<div class='rounded-2xl border border-dashed border-slate-300 dark:border-white/20 p-4 text-sm text-slate-500 dark:text-slate-300'>No categories found.</div>";
+          return;
+        }
+
+        adminCategoryList.innerHTML = state.categories.map(function (category) {
+          const categoryProductCount = products.filter(function (product) {
+            return product.category === category.id;
+          }).length;
+
+          return "<article class='rounded-2xl border border-black/10 dark:border-white/10 p-4 bg-white/70 dark:bg-white/5'>" +
+            "<div class='flex items-start justify-between gap-3'>" +
+              "<div class='min-w-0'>" +
+                "<p class='font-semibold truncate'>" + sanitize(category.name) + "</p>" +
+                "<p class='text-xs text-slate-500 dark:text-slate-300 mt-1'>ID: " + sanitize(category.id) + " | " + categoryProductCount + " products</p>" +
+              "</div>" +
+              "<div class='flex gap-2'>" +
+                "<button type='button' data-admin-category-action='edit' data-id='" + sanitize(category.id) + "' class='ui-btn rounded-full px-3 py-1.5 border border-slate-300 dark:border-white/20 text-[10px] uppercase tracking-[0.15em]'>Edit</button>" +
+                "<button type='button' data-admin-category-action='delete' data-id='" + sanitize(category.id) + "' class='ui-btn rounded-full px-3 py-1.5 border border-red-300 text-red-600 dark:text-red-300 dark:border-red-400/40 text-[10px] uppercase tracking-[0.15em]'>Delete</button>" +
+              "</div>" +
+            "</div>" +
+          "</article>";
+        }).join("");
+      }
+
+      function resetProductForm() {
+        if (!adminProductForm || !adminProductEditId || !adminProductMode || !adminProductFeedback) {
+          return;
+        }
+
+        adminProductForm.reset();
+        adminProductEditId.value = "";
+        adminProductMode.textContent = "Add Mode";
+        adminProductFeedback.textContent = "";
+        adminProductFeedback.className = "text-sm";
+
+        if (adminProductCategory && state.categories.length) {
+          adminProductCategory.value = state.categories[0].id;
+        }
+      }
+
+      function resetCategoryForm() {
+        if (!adminCategoryForm || !adminCategoryEditId || !adminCategoryMode || !adminCategoryFeedback) {
+          return;
+        }
+
+        adminCategoryForm.reset();
+        adminCategoryEditId.value = "";
+        adminCategoryMode.textContent = "Add Mode";
+        adminCategoryFeedback.textContent = "";
+        adminCategoryFeedback.className = "text-sm";
+      }
+
+      function syncAdminContactForm() {
+        if (!adminContactEmail || !adminContactPhone || !adminContactHours || !adminContactHoursNote || !adminContactAddress) {
+          return;
+        }
+
+        adminContactEmail.value = state.contact.email;
+        adminContactPhone.value = state.contact.phone;
+        adminContactHours.value = state.contact.hours;
+        adminContactHoursNote.value = state.contact.hoursNote;
+        adminContactAddress.value = state.contact.address;
+      }
+
+      function syncAdminWorkspace() {
+        renderAdminStats();
+        renderAdminCategoryOptions();
+        renderAdminProductList();
+        renderAdminCategoryList();
+        syncAdminContactForm();
+      }
+
+      function setAdminUnlockState(unlocked) {
+        state.adminUnlocked = Boolean(unlocked);
+        localStorage.setItem(STORAGE_KEYS.adminUnlocked, state.adminUnlocked ? "1" : "0");
+
+        if (adminWorkspace) {
+          adminWorkspace.classList.toggle("hidden", !state.adminUnlocked);
+        }
+
+        if (adminLockView) {
+          adminLockView.classList.toggle("hidden", state.adminUnlocked);
+        }
+
+        if (state.adminUnlocked) {
+          syncAdminWorkspace();
+        } else if (adminPasscodeInput) {
+          adminPasscodeInput.value = "";
+        }
+      }
+
+      function persistAndRefreshCatalog() {
+        if (state.activeCategory !== "all" && !categoryExists(state.activeCategory)) {
+          state.activeCategory = "all";
+        }
+
+        saveCatalog();
+        renderCollections();
+        renderFilterChips();
+        renderProducts();
+        renderContactInfo();
+
+        if (state.adminUnlocked) {
+          syncAdminWorkspace();
+        }
+      }
+
+      function populateProductFormForEdit(id) {
+        const product = products.find(function (entry) {
+          return entry.id === id;
+        });
+
+        if (!product || !adminProductEditId || !adminProductName || !adminProductCategory || !adminProductPrice || !adminProductBadge || !adminProductImage || !adminProductDescription || !adminProductMode || !adminProductFeedback) {
+          return;
+        }
+
+        adminProductEditId.value = String(product.id);
+        adminProductName.value = product.name;
+        adminProductCategory.value = product.category;
+        adminProductPrice.value = String(product.price);
+        adminProductBadge.value = product.badge;
+        adminProductImage.value = product.image;
+        adminProductDescription.value = product.description;
+        adminProductMode.textContent = "Edit Mode";
+        adminProductFeedback.textContent = "Editing product: " + product.name;
+        adminProductFeedback.className = "text-sm text-amber-600 dark:text-amber-300";
+      }
+
+      function populateCategoryFormForEdit(id) {
+        const category = getCategoryById(id);
+
+        if (!category || !adminCategoryEditId || !adminCategoryId || !adminCategoryName || !adminCategoryTitle || !adminCategoryImage || !adminCategoryMode || !adminCategoryFeedback) {
+          return;
+        }
+
+        adminCategoryEditId.value = category.id;
+        adminCategoryId.value = category.id;
+        adminCategoryName.value = category.name;
+        adminCategoryTitle.value = category.title;
+        adminCategoryImage.value = category.image;
+        adminCategoryMode.textContent = "Edit Mode";
+        adminCategoryFeedback.textContent = "Editing category: " + category.name;
+        adminCategoryFeedback.className = "text-sm text-amber-600 dark:text-amber-300";
+      }
+
+      function bindEvents() {
+        routeLinks.forEach(function (link) {
+          link.addEventListener("click", function (event) {
+            const route = link.dataset.routeLink;
+            if (!route) {
+              return;
+            }
+
+            event.preventDefault();
+
+            if (getRouteFromHash() === route) {
+              applyRoute(route, { scroll: true });
+              closeMobileMenu();
+            } else {
+              window.location.hash = route;
+            }
+          });
+        });
+
+        if (filterChipsContainer) {
+          filterChipsContainer.addEventListener("click", function (event) {
+            const button = event.target.closest("button[data-filter]");
+            if (!button) {
+              return;
+            }
+            setCategory(button.dataset.filter || "all");
+          });
+        }
+
+        if (searchInput) {
+          searchInput.addEventListener("input", function () {
+            state.query = searchInput.value;
+            renderProducts();
+          });
+        }
+
+        if (collectionsGrid) {
+          collectionsGrid.addEventListener("click", function (event) {
+            const button = event.target.closest("button[data-filter-target]");
+            if (!button) {
+              return;
+            }
+
+            const targetCategory = button.dataset.filterTarget;
+            if (!targetCategory) {
+              return;
+            }
+
+            setCategory(targetCategory);
+
+            if (getRouteFromHash() === "shop") {
+              applyRoute("shop", { scroll: true });
+            } else {
+              window.location.hash = "shop";
+            }
+          });
+        }
+
+        grid.addEventListener("click", function (event) {
+          const button = event.target.closest("button[data-action]");
+          if (!button) {
+            return;
+          }
+
+          const id = Number(button.dataset.id);
+          const product = products.find(function (item) {
+            return item.id === id;
+          });
+
+          if (!product) {
+            return;
+          }
+
+          if (button.dataset.action === "quick-view") {
+            openModal(product);
+            return;
+          }
+
+          if (button.dataset.action === "add-cart") {
+            addToCart(product);
+          }
+        });
+
+        openCartBtn.addEventListener("click", openCart);
+        closeCartBtn.addEventListener("click", closeCart);
+        cartShell.addEventListener("click", function (event) {
+          if (event.target === cartShell) {
+            closeCart();
+          }
+        });
+
+        cartList.addEventListener("click", function (event) {
+          const actionBtn = event.target.closest("button[data-cart-action]");
+          if (!actionBtn) {
+            return;
+          }
+
+          const rawId = actionBtn.dataset.id;
+          const id = /^\d+$/.test(rawId) ? Number(rawId) : rawId;
+          const action = actionBtn.dataset.cartAction;
+
+          if (action === "increase") {
+            changeQty(id, 1);
+          } else if (action === "decrease") {
+            changeQty(id, -1);
+          } else if (action === "remove") {
+            removeFromCart(id);
+          }
+        });
+
+        closeModalBtn.addEventListener("click", closeModal);
+        modal.addEventListener("click", function (event) {
+          if (event.target === modal) {
+            closeModal();
+          }
+        });
+
+        modalAddCartBtn.addEventListener("click", function () {
+          const product = products.find(function (item) {
+            return item.id === state.activeProductId;
+          });
+
+          if (!product) {
+            return;
+          }
+
+          addToCart(product);
+          closeModal();
+        });
+
+        openMobileMenuBtn.addEventListener("click", openMobileMenu);
+        closeMobileMenuBtn.addEventListener("click", closeMobileMenu);
+        mobileMenuShell.addEventListener("click", function (event) {
+          if (event.target === mobileMenuShell) {
+            closeMobileMenu();
+          }
+        });
+
+        mobileNavLinks.forEach(function (link) {
+          link.addEventListener("click", closeMobileMenu);
+        });
+
+        if (openAdminBtn) {
+          openAdminBtn.addEventListener("click", openAdmin);
+        }
+
+        if (closeAdminBtn) {
+          closeAdminBtn.addEventListener("click", closeAdmin);
+        }
+
+        if (adminShell) {
+          adminShell.addEventListener("click", function (event) {
+            if (event.target === adminShell) {
+              closeAdmin();
+            }
+          });
+        }
+
+        if (adminLoginForm && adminPasscodeInput && adminLoginFeedback) {
+          adminLoginForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+            const passcode = String(adminPasscodeInput.value || "").trim();
+
+            if (passcode !== ADMIN_PASSCODE) {
+              adminLoginFeedback.textContent = "Invalid passcode. Please try again.";
+              adminLoginFeedback.className = "text-sm text-red-500";
+              showToast("Invalid admin passcode", "error");
+              return;
+            }
+
+            adminLoginFeedback.textContent = "Access granted.";
+            adminLoginFeedback.className = "text-sm text-emerald-600 dark:text-emerald-300";
+            setAdminUnlockState(true);
+            showToast("Admin panel unlocked");
+          });
+        }
+
+        if (adminProductForm && adminProductFeedback) {
+          adminProductForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const name = String(adminProductName.value || "").trim();
+            const category = String(adminProductCategory.value || "").trim();
+            const price = Number(adminProductPrice.value || 0);
+            const badge = String(adminProductBadge.value || "").trim();
+            const image = String(adminProductImage.value || "").trim();
+            const description = String(adminProductDescription.value || "").trim();
+
+            if (!name || !category || !Number.isFinite(price) || price <= 0 || !image || !description) {
+              adminProductFeedback.textContent = "Please complete all product fields correctly.";
+              adminProductFeedback.className = "text-sm text-red-500";
+              showToast("Invalid product data", "error");
+              return;
+            }
+
+            const resolvedCategory = getCategoryById(category);
+            const resolvedBadge = badge || (resolvedCategory ? resolvedCategory.name + " Collection" : "Curated Item");
+            const editId = Number(adminProductEditId.value || 0);
+
+            if (editId) {
+              const existing = products.find(function (product) {
+                return product.id === editId;
+              });
+
+              if (!existing) {
+                adminProductFeedback.textContent = "Product no longer exists.";
+                adminProductFeedback.className = "text-sm text-red-500";
+                return;
+              }
+
+              existing.name = name;
+              existing.category = category;
+              existing.price = price;
+              existing.badge = resolvedBadge;
+              existing.image = image;
+              existing.description = description;
+
+              showToast("Product updated");
+            } else {
+              const nextId = products.reduce(function (maxId, product) {
+                return Math.max(maxId, Number(product.id) || 0);
+              }, 100) + 1;
+
+              products.push({
+                id: nextId,
+                name: name,
+                category: category,
+                price: price,
+                image: image,
+                badge: resolvedBadge,
+                description: description
+              });
+
+              showToast("Product added to catalog");
+            }
+
+            persistAndRefreshCatalog();
+            resetProductForm();
+            adminProductFeedback.textContent = "Product saved successfully.";
+            adminProductFeedback.className = "text-sm text-emerald-600 dark:text-emerald-300";
+          });
+        }
+
+        if (adminProductResetBtn) {
+          adminProductResetBtn.addEventListener("click", resetProductForm);
+        }
+
+        if (adminProductList) {
+          adminProductList.addEventListener("click", function (event) {
+            const button = event.target.closest("button[data-admin-product-action]");
+            if (!button) {
+              return;
+            }
+
+            const action = button.dataset.adminProductAction;
+            const id = Number(button.dataset.id || 0);
+            if (!id) {
+              return;
+            }
+
+            if (action === "edit") {
+              populateProductFormForEdit(id);
+              return;
+            }
+
+            if (action === "delete") {
+              const existing = products.find(function (product) {
+                return product.id === id;
+              });
+
+              if (!existing) {
+                return;
+              }
+
+              const confirmed = window.confirm("Delete product: " + existing.name + "?");
+              if (!confirmed) {
+                return;
+              }
+
+              products = products.filter(function (product) {
+                return product.id !== id;
+              });
+
+              persistAndRefreshCatalog();
+              resetProductForm();
+              showToast("Product deleted");
+            }
+          });
+        }
+
+        if (adminCategoryForm && adminCategoryFeedback) {
+          adminCategoryForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const editId = String(adminCategoryEditId.value || "").trim();
+            const nextId = normalizeCategoryId(adminCategoryId.value);
+            const name = String(adminCategoryName.value || "").trim();
+            const title = String(adminCategoryTitle.value || "").trim();
+            const image = String(adminCategoryImage.value || "").trim();
+
+            if (!nextId || !name || !title || !image) {
+              adminCategoryFeedback.textContent = "Please complete all category fields.";
+              adminCategoryFeedback.className = "text-sm text-red-500";
+              showToast("Invalid category data", "error");
+              return;
+            }
+
+            const duplicate = state.categories.some(function (category) {
+              return category.id === nextId && category.id !== editId;
+            });
+
+            if (duplicate) {
+              adminCategoryFeedback.textContent = "Category ID already exists. Use a unique ID.";
+              adminCategoryFeedback.className = "text-sm text-red-500";
+              showToast("Duplicate category ID", "error");
+              return;
+            }
+
+            if (editId) {
+              const existing = getCategoryById(editId);
+              if (!existing) {
+                adminCategoryFeedback.textContent = "Category no longer exists.";
+                adminCategoryFeedback.className = "text-sm text-red-500";
+                return;
+              }
+
+              existing.id = nextId;
+              existing.name = name;
+              existing.title = title;
+              existing.image = image;
+
+              if (editId !== nextId) {
+                products.forEach(function (product) {
+                  if (product.category === editId) {
+                    product.category = nextId;
+                  }
+                });
+
+                if (state.activeCategory === editId) {
+                  state.activeCategory = nextId;
+                }
+              }
+
+              showToast("Category updated");
+            } else {
+              state.categories.push({
+                id: nextId,
+                name: name,
+                title: title,
+                image: image
+              });
+              showToast("Category created");
+            }
+
+            persistAndRefreshCatalog();
+            resetCategoryForm();
+            adminCategoryFeedback.textContent = "Category saved successfully.";
+            adminCategoryFeedback.className = "text-sm text-emerald-600 dark:text-emerald-300";
+          });
+        }
+
+        if (adminCategoryResetBtn) {
+          adminCategoryResetBtn.addEventListener("click", resetCategoryForm);
+        }
+
+        if (adminCategoryList) {
+          adminCategoryList.addEventListener("click", function (event) {
+            const button = event.target.closest("button[data-admin-category-action]");
+            if (!button) {
+              return;
+            }
+
+            const action = button.dataset.adminCategoryAction;
+            const id = button.dataset.id;
+
+            if (!id) {
+              return;
+            }
+
+            if (action === "edit") {
+              populateCategoryFormForEdit(id);
+              return;
+            }
+
+            if (action === "delete") {
+              if (state.categories.length <= 1) {
+                showToast("At least one category must remain", "error");
+                return;
+              }
+
+              const existing = getCategoryById(id);
+              if (!existing) {
+                return;
+              }
+
+              const confirmed = window.confirm("Delete category: " + existing.name + "?");
+              if (!confirmed) {
+                return;
+              }
+
+              const fallbackCategory = state.categories.find(function (category) {
+                return category.id !== id;
+              });
+
+              state.categories = state.categories.filter(function (category) {
+                return category.id !== id;
+              });
+
+              products.forEach(function (product) {
+                if (product.category === id && fallbackCategory) {
+                  product.category = fallbackCategory.id;
+                }
+              });
+
+              if (state.activeCategory === id) {
+                state.activeCategory = "all";
+              }
+
+              persistAndRefreshCatalog();
+              resetCategoryForm();
+              showToast("Category deleted");
+            }
+          });
+        }
+
+        if (adminContactForm && adminContactFeedback) {
+          adminContactForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const email = String(adminContactEmail.value || "").trim();
+            const phone = String(adminContactPhone.value || "").trim();
+            const hours = String(adminContactHours.value || "").trim();
+            const hoursNote = String(adminContactHoursNote.value || "").trim();
+            const address = String(adminContactAddress.value || "").trim();
+
+            if (!email || !phone || !hours || !hoursNote || !address) {
+              adminContactFeedback.textContent = "Please complete all contact fields.";
+              adminContactFeedback.className = "md:col-span-2 text-sm text-red-500";
+              showToast("Contact settings incomplete", "error");
+              return;
+            }
+
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+              adminContactFeedback.textContent = "Please enter a valid contact email.";
+              adminContactFeedback.className = "md:col-span-2 text-sm text-red-500";
+              showToast("Invalid contact email", "error");
+              return;
+            }
+
+            state.contact = {
+              email: email,
+              phone: phone,
+              hours: hours,
+              hoursNote: hoursNote,
+              address: address
+            };
+
+            persistAndRefreshCatalog();
+            adminContactFeedback.textContent = "Contact settings saved.";
+            adminContactFeedback.className = "md:col-span-2 text-sm text-emerald-600 dark:text-emerald-300";
+            showToast("Contact details updated");
+          });
+        }
+
+        if (adminLogoutBtn) {
+          adminLogoutBtn.addEventListener("click", function () {
+            setAdminUnlockState(false);
+            showToast("Admin panel locked");
+          });
+        }
+
+        if (adminResetCatalogBtn) {
+          adminResetCatalogBtn.addEventListener("click", function () {
+            const confirmed = window.confirm("Reset categories, products and contact details to default values?");
+            if (!confirmed) {
+              return;
+            }
+
+            state.categories = deepClone(defaultCategories);
+            products = deepClone(defaultProducts);
+            state.contact = deepClone(defaultContact);
+            state.activeCategory = "all";
+            state.query = "";
+
+            if (searchInput) {
+              searchInput.value = "";
+            }
+
+            persistAndRefreshCatalog();
+            resetProductForm();
+            resetCategoryForm();
+            showToast("Catalog reset to default");
+          });
+        }
+
+        themeToggle.addEventListener("click", function () {
+          const darkActive = root.classList.contains("dark");
+          const nextMode = darkActive ? "light" : "dark";
+          localStorage.setItem(STORAGE_KEYS.theme, nextMode);
+          applyTheme(nextMode);
+        });
+
+        focusSearchBtn.addEventListener("click", function () {
+          if (getRouteFromHash() === "shop") {
+            applyRoute("shop", { scroll: true });
+          } else {
+            window.location.hash = "shop";
+          }
+
+          setTimeout(function () {
+            searchInput.focus();
+          }, 220);
+        });
+
+        newsletterForm.addEventListener("submit", function (event) {
+          event.preventDefault();
+          const emailValue = String(document.getElementById("newsletter-email").value || "").trim();
+
+          if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailValue)) {
+            newsletterNote.textContent = "Please enter a valid email address.";
+            newsletterNote.className = "text-xs text-red-300 mt-4";
+            showToast("Invalid email format", "error");
+            return;
+          }
+
+          newsletterForm.reset();
+          newsletterNote.textContent = "Request received. Concierge will contact you shortly.";
+          newsletterNote.className = "text-xs text-emerald-200 mt-4";
+          showToast("Invitation request submitted");
+        });
+
+        document.addEventListener("click", function (event) {
+          const copyBtn = event.target.closest(".copy-btn");
+          if (copyBtn) {
+            copyText(copyBtn.dataset.copy || "");
+            return;
+          }
+
+          const serviceButton = event.target.closest(".add-service");
+          if (serviceButton) {
+            const packageItem = {
+              id: serviceButton.dataset.id,
+              name: serviceButton.dataset.name,
+              price: Number(serviceButton.dataset.price || 0),
+              badge: serviceButton.dataset.badge,
+              image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=1200&auto=format&fit=crop"
+            };
+            addToCart(packageItem);
+          }
+        });
+
+        document.querySelectorAll(".faq-item").forEach(function (faqItem) {
+          const toggle = faqItem.querySelector(".faq-toggle");
+          if (!toggle) {
+            return;
+          }
+          toggle.addEventListener("click", function () {
+            const currentlyOpen = faqItem.dataset.open === "true";
+            document.querySelectorAll(".faq-item").forEach(function (item) {
+              item.dataset.open = "false";
+            });
+            faqItem.dataset.open = currentlyOpen ? "false" : "true";
+          });
+        });
+
+        if (appointmentForm && submitAppointmentBtn && formFeedback) {
+          appointmentForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+            const validationError = validateAppointmentForm();
+
+            if (validationError) {
+              formFeedback.textContent = validationError;
+              formFeedback.className = "text-sm text-red-500";
+              showToast(validationError, "error");
+              return;
+            }
+
+            submitAppointmentBtn.disabled = true;
+            submitAppointmentBtn.textContent = "Submitting...";
+            formFeedback.textContent = "";
+
+            const payload = {
+              firstName: String(document.getElementById("firstName")?.value || "").trim(),
+              lastName: String(document.getElementById("lastName")?.value || "").trim(),
+              email: String(document.getElementById("email")?.value || "").trim(),
+              phone: String(document.getElementById("phone")?.value || "").trim(),
+              service: String(document.getElementById("service")?.value || "").trim(),
+              date: String(document.getElementById("date")?.value || "").trim(),
+              message: String(document.getElementById("message")?.value || "").trim(),
+              createdAt: new Date().toISOString()
+            };
+
+            setTimeout(function () {
+              localStorage.setItem("tj_last_appointment", JSON.stringify(payload));
+              appointmentForm.reset();
+              formFeedback.textContent = "Request submitted. Concierge will confirm your slot by email or phone.";
+              formFeedback.className = "text-sm text-emerald-600 dark:text-emerald-300";
+              showToast("Appointment request submitted");
+              submitAppointmentBtn.disabled = false;
+              submitAppointmentBtn.textContent = "Submit Appointment Request";
+            }, 850);
+          });
+        }
+
+        document.getElementById("checkout-btn").addEventListener("click", function () {
+          if (!state.cart.length) {
+            showToast("Your bag is currently empty", "error");
+            return;
+          }
+          showToast("Checkout flow will be connected with backend soon");
+        });
+
+        window.addEventListener("scroll", updateNavStyle);
+
+        window.addEventListener("hashchange", function () {
+          applyRoute(getRouteFromHash(), { scroll: true });
+        });
+
+        window.addEventListener("keydown", function (event) {
+          if (event.key !== "Escape") {
+            return;
+          }
+
+          if (adminShell.classList.contains("admin-open")) {
+            closeAdmin();
+            return;
+          }
+
+          if (modal.classList.contains("modal-open")) {
+            closeModal();
+            return;
+          }
+
+          if (cartShell.classList.contains("drawer-open")) {
+            closeCart();
+            return;
+          }
+
+          if (mobileMenuShell.classList.contains("menu-open")) {
+            closeMobileMenu();
+          }
+        });
+      }
+
+      function init() {
+        initTheme();
+        loadCatalog();
+        renderContactInfo();
+        renderCollections();
+        renderFilterChips();
+        renderProducts();
+
+        state.cart = loadCart();
+        if (dateInput) {
+          dateInput.min = new Date().toISOString().split("T")[0];
+        }
+
+        renderCart();
+        setAdminUnlockState(localStorage.getItem(STORAGE_KEYS.adminUnlocked) === "1");
+        applyRevealAnimation();
+        updateNavStyle();
+        bindEvents();
+        applyRoute(getRouteFromHash() || "home", { scroll: false });
+      }
+
+      init();
+    })();
+  </script>
+
+  <!-- Floating contact widget: WhatsApp (prefill), Messenger & Instagram (copy greeting) -->
+  <div id="contact-widget" class="fixed right-4 bottom-6 z-50 flex flex-col items-end gap-3">
+    <a id="wa-btn" href="#" target="_blank" rel="noopener noreferrer" aria-label="Message us on WhatsApp" class="ui-btn inline-flex items-center gap-3 px-4 py-2 rounded-full bg-[#25D366] text-white shadow-soft">
+      <i class="fa-brands fa-whatsapp"></i>
+      <span class="hidden sm:inline">WhatsApp</span>
+    </a>
+
+    <button id="fb-btn" type="button" data-url="https://m.me/YOUR_FACEBOOK_PAGE" aria-label="Message us on Messenger" class="ui-btn inline-flex items-center gap-3 px-4 py-2 rounded-full bg-[#1877F2] text-white shadow-soft">
+      <i class="fa-brands fa-facebook-messenger"></i>
+      <span class="hidden sm:inline">Messenger</span>
+    </button>
+
+    <button id="ig-btn" type="button" data-url="https://www.instagram.com/YOUR_INSTAGRAM_USERNAME/" aria-label="Message us on Instagram" class="ui-btn inline-flex items-center gap-3 px-4 py-2 rounded-full bg-[#E1306C] text-white shadow-soft">
+      <i class="fa-brands fa-instagram"></i>
+      <span class="hidden sm:inline">Instagram</span>
+    </button>
+  </div>
+
+  <script>
+    (function () {
+      const greeting = "Hello! Thank you for contacting TJ Brand Atelier. Welcome to our atelier — how may we assist you today?";
+
+      function showToastInline(text) {
+        const t = document.createElement("div");
+        t.textContent = text;
+        t.style.cssText = "position:fixed;right:1rem;bottom:8.5rem;background:#111827;color:white;padding:0.55rem 0.9rem;border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,0.2);z-index:9999;font-size:14px";
+        document.body.appendChild(t);
+        setTimeout(function () { t.remove(); }, 2400);
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const phoneNode = document.getElementById("contact-phone-value");
+        const rawPhone = phoneNode ? phoneNode.textContent.trim() : "03220254568";
+        let digits = rawPhone.replace(/\D/g, "");
+        if (digits.startsWith("0")) digits = "92" + digits.slice(1);
+
+        const waBtn = document.getElementById("wa-btn");
+        if (waBtn) {
+          const href = "https://wa.me/" + digits + "?text=" + encodeURIComponent(greeting);
+          waBtn.setAttribute("href", href);
+        }
+
+        function handleCopyAndOpen(btn) {
+          const url = btn.dataset.url || "#";
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(greeting).then(function () {
+              window.open(url, "_blank", "noopener");
+              showToastInline("Greeting copied to clipboard — paste in chat");
+            }, function () {
+              window.open(url, "_blank", "noopener");
+              showToastInline("Open chat and paste the suggested greeting");
+            });
+          } else {
+            window.open(url, "_blank", "noopener");
+            showToastInline("Open chat and paste the suggested greeting");
+          }
+        }
+
+        const fbBtn = document.getElementById("fb-btn");
+        if (fbBtn) {
+          fbBtn.addEventListener("click", function (e) {
+            e.preventDefault();
+            handleCopyAndOpen(fbBtn);
+          });
+        }
+
+        const igBtn = document.getElementById("ig-btn");
+        if (igBtn) {
+          igBtn.addEventListener("click", function (e) {
+            e.preventDefault();
+            handleCopyAndOpen(igBtn);
+          });
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
