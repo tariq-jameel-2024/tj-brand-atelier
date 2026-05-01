@@ -851,7 +851,7 @@
             <a href="#contact" data-route-link="contact" class="ui-btn inline-flex items-center justify-center px-8 py-3.5 rounded-full border border-white/35 text-white uppercase tracking-[0.18em] text-[11px] font-semibold">Book Private Styling</a>
           </div>
 
-          <div class="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-4 text-white/90">
+          <div class="mt-12 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4 text-white/90">
             <div class="p-4 rounded-xl bg-white/10 border border-white/15">
               <p class="font-display text-3xl">120h</p>
               <p class="text-[10px] uppercase tracking-[0.26em] text-white/70 mt-1">Craft Time</p>
@@ -868,6 +868,14 @@
               <p class="font-display text-3xl">4.9</p>
               <p class="text-[10px] uppercase tracking-[0.26em] text-white/70 mt-1">Client Rating</p>
             </div>
+            <div class="p-4 rounded-xl bg-white/10 border border-white/15">
+              <p class="font-display text-3xl">250+</p>
+              <p class="text-[10px] uppercase tracking-[0.26em] text-white/70 mt-1">Stitch Points</p>
+            </div>
+            <div class="p-4 rounded-xl bg-white/10 border border-white/15">
+              <p class="font-display text-3xl">30</p>
+              <p class="text-[10px] uppercase tracking-[0.26em] text-white/70 mt-1">Countries Shipped</p>
+            </div>
           </div>
         </div>
       </div>
@@ -879,6 +887,25 @@
         <span>Private Fittings Worldwide</span>
         <span>Lifetime Stitch Support</span>
         <span>Limited Capsule Drops</span>
+      </div>
+    </section>
+
+    <!-- Promotional Carousel: dynamically generated from defaultCategories -->
+    <section id="promo-banner" class="py-12 md:py-16">
+      <div class="max-w-7xl mx-auto px-5 md:px-10">
+        <div class="relative rounded-3xl overflow-hidden shadow-luxe ring-1 ring-[#c5a369]/12 bg-[#05070c]">
+          <!-- Slides container (slides injected by JS) -->
+          <div id="promo-slides" class="relative h-72 md:h-96"></div>
+
+          <!-- Controls / Dots -->
+          <div class="absolute inset-x-6 bottom-6 z-20 flex items-center justify-between">
+            <div id="promo-dots" class="flex gap-3"></div>
+            <div class="flex gap-3">
+              <button id="promo-prev" aria-label="Previous" class="w-10 h-10 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-white/20 transition"><i class="fa-solid fa-chevron-left"></i></button>
+              <button id="promo-next" aria-label="Next" class="w-10 h-10 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-white/20 transition"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -1280,13 +1307,19 @@
           id: "outerwear",
           name: "Outerwear",
           title: "Coats & Overcoats",
-          image: "men%20dress.png/Create_a_premium_202604172102.png"
+          image: "assets/images/male-baggy-jeans.png"
         },
         {
           id: "evening-wear",
           name: "Evening",
           title: "Evening Dressing",
-          image: "femaldress.png/Create_a_luxurious_202604172101.png"
+          image: "assets/images/tulle-princess-dress.png"
+        },
+        {
+          id: "children",
+          name: "Children",
+          title: "Kids Collection",
+          image: "assets/images/image_06ea4b.png"
         }
       ];
 
@@ -1295,7 +1328,7 @@
           id: 101,
           name: "Regent Midnight Tuxedo",
           category: "men",
-          price: 214000,
+          price: 2000,
           image: "https://images.unsplash.com/photo-1593030761757-71fae45fa0e7?q=80&w=1200&auto=format&fit=crop",
           badge: "Men Tailoring",
           description: "Pure wool tuxedo with sculpted shoulders and satin peak lapel finishing for formal authority."
@@ -1304,7 +1337,7 @@
           id: 102,
           name: "Orchid Draped Gown",
           category: "women",
-          price: 186000,
+          price: 5000,
           image: "https://images.unsplash.com/photo-1495385794356-15371f348c31?q=80&w=1200&auto=format&fit=crop",
           badge: "Women Couture",
           description: "Hand-draped satin gown with fluid fall and precision waist architecture for evening events."
@@ -1313,7 +1346,7 @@
           id: 103,
           name: "Imperial Leather Oxford",
           category: "footwear",
-          price: 124000,
+          price: 1240,
           image: "https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?q=80&w=1200&auto=format&fit=crop",
           badge: "Footwear",
           description: "Full-grain oxford with layered patina and hand-stitched sole designed for boardroom and gala use."
@@ -1322,7 +1355,7 @@
           id: 104,
           name: "Noir Architectural Blazer",
           category: "men",
-          price: 162000,
+          price: 2000,
           image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=1200&auto=format&fit=crop",
           badge: "Men Tailoring",
           description: "Semi-canvas blazer with angular chest line, dual inner support and breathable finish."
@@ -1331,7 +1364,7 @@
           id: 105,
           name: "Velvet Meridian Set",
           category: "women",
-          price: 172500,
+          price: 5000,
           image: "https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1200&auto=format&fit=crop",
           badge: "Women Couture",
           description: "Two-piece velvet set balancing movement and structure, made for high-profile receptions."
@@ -1340,7 +1373,7 @@
           id: 106,
           name: "Monarch Chelsea Boot",
           category: "footwear",
-          price: 136000,
+          price: 1360,
           image: "https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=1200&auto=format&fit=crop",
           badge: "Footwear",
           description: "Polished leather chelsea boot featuring custom arch support and anti-slip sole geometry."
@@ -1349,7 +1382,7 @@
           id: 201,
           name: "Everyday Casual Jacket",
           category: "men-casual",
-          price: 45000,
+          price: 2000,
           image: "femal%20%2Cdress.png/Create_a_premium_202604172247.png",
           badge: "Casual Wear",
           description: "Lightweight jacket, suitable for everyday wear."
@@ -1358,7 +1391,7 @@
           id: 202,
           name: "Comfortable Shirt",
           category: "men-casual",
-          price: 18000,
+          price: 2000,
           image: "men%20drees%2Cpng/Create_a_premium_202604172255.png",
           badge: "Casual Wear",
           description: "Soft fabric with a comfortable fit."
@@ -1367,46 +1400,73 @@
           id: 203,
           name: "Comfortable Pants",
           category: "men-casual",
-          price: 22000,
+          price: 2000,
           image: "men%20pant.png/Create_a_premium_202604172319.png",
           badge: "Casual Wear",
           description: "Comfortable and durable pants, ideal for everyday use."
         },
         {
           id: 204,
-          name: "Classic Handbag",
+          name: "Male Baggy Jeans",
           category: "accessories",
-          price: 32000,
-          image: "https://source.unsplash.com/1200x800/?handbag-leather",
-          badge: "Handbag",
-          description: "Elegant handcrafted handbag, suitable for daily use and gatherings."
+          price: 2799,
+          image: "assets/images/male-baggy-jeans.png",
+          badge: "Jeans",
+          description: "Comfortable baggy jeans tailored for men; relaxed fit."
         },
         {
           id: 205,
-          name: "Comfort Waist Bag",
+          name: "Female Baggy Jeans",
           category: "accessories",
-          price: 12000,
-          image: "https://source.unsplash.com/1200x800/?fanny-pack",
+          price: 2599,
+          image: "assets/images/female-baggy-jeans.png",
           badge: "Accessories",
-          description: "Comfortable waist bag, ideal for travel."
+          description: "Comfortable baggy jeans tailored for females; relaxed fit."
         },
         {
           id: 206,
-          name: "Night Clutch",
+          name: "Child Summer Collection",
           category: "accessories",
-          price: 9000,
-          image: "https://source.unsplash.com/1200x800/?clutch-bag",
-          badge: "Clutch",
-          description: "Elegant clutch for evening events."
+          price: 2299,
+          image: "assets/images/child-summer.png",
+          badge: "Children",
+          description: "Premium summer collection for children; lightweight and stylish."
         },
         {
           id: 207,
-          name: "Style Pin",
+          name: "Eco-Friendly Water Bottle",
           category: "accessories",
-          price: 3500,
-          image: "https://source.unsplash.com/1200x800/?brooch",
+          price: 1500,
+          image: "assets/images/waterbottle.png",
           badge: "Accessories",
-          description: "Elegant style pin that completes an outfit."
+          description: "Reusable eco-friendly water bottle; sustainable and stylish."
+        },
+        {
+          id: 208,
+          name: "Little Party Dress",
+          category: "children",
+          price: 2999,
+          image: "assets/images/little-party-dress.png",
+          badge: "Children's Dresses",
+          description: "Soft layered party dress with breathable lining and comfort-fit tailoring for special occasions."
+        },
+        {
+          id: 209,
+          name: "Tulle Princess Dress",
+          category: "children",
+          price: 2099,
+          image: "assets/images/tulle-princess-dress.png",
+          badge: "Children's Dresses",
+          description: "Elegant tulle silhouette with a satin bow finish, designed for celebrations and formal events."
+        },
+        {
+          id: 210,
+          name: "Sunbeam Floral Day Dress",
+          category: "children",
+          price: 14,
+          image: "https://images.unsplash.com/photo-1518834107812-67b0b7c58434?q=80&w=1200&auto=format&fit=crop",
+          badge: "Children's Dresses",
+          description: "Lightweight floral day dress with a gentle stretch waist for all-day ease and movement."
         }
       ];
 
@@ -1599,20 +1659,43 @@
         const fallbackProducts = deepClone(defaultProducts);
         const fallbackContact = deepClone(defaultContact);
 
-        const loadedCategories = Array.isArray(parsed && parsed.categories)
-          ? parsed.categories.map(function (entry) {
-            return {
-              id: normalizeCategoryId(entry && entry.id),
-              name: String((entry && entry.name) || "").trim(),
-              title: String((entry && entry.title) || "").trim(),
-              image: String((entry && entry.image) || "").trim()
-            };
-          }).filter(function (entry) {
-            return entry.id && entry.name && entry.title && entry.image;
-          })
-          : [];
+        // Prefer defaults when stored catalog appears stale/older than current defaults.
+        let loadedCategories = [];
+        if (Array.isArray(parsed && parsed.categories)) {
+          // if stored categories are missing any of the current default category IDs,
+          // consider the stored catalog stale and fall back to defaults.
+          const parsedRawCats = parsed.categories || [];
+          const parsedIds = parsedRawCats.map(function (e) { return normalizeCategoryId(e && e.id); }).filter(Boolean);
+          const defaultIds = defaultCategories.map(function (c) { return normalizeCategoryId(c && c.id); }).filter(Boolean);
+          const hasAllDefault = defaultIds.every(function (id) { return parsedIds.indexOf(id) !== -1; });
+
+          if (hasAllDefault) {
+            loadedCategories = parsedRawCats.map(function (entry) {
+              return {
+                id: normalizeCategoryId(entry && entry.id),
+                name: String((entry && entry.name) || "").trim(),
+                title: String((entry && entry.title) || "").trim(),
+                image: String((entry && entry.image) || "").trim()
+              };
+            }).filter(function (entry) { return entry.id && entry.name && entry.title && entry.image; });
+          } else {
+            loadedCategories = [];
+          }
+        } else {
+          loadedCategories = [];
+        }
 
         state.categories = loadedCategories.length ? loadedCategories : fallbackCategories;
+
+        // Ensure the Children category shows the newly uploaded local image
+        try {
+          state.categories = state.categories.map(function (c) {
+            if (normalizeCategoryId(c && c.id) === 'children') {
+              return Object.assign({}, c, { image: 'assets/images/image_06ea4b.png' });
+            }
+            return c;
+          });
+        } catch (e) { /* ignore */ }
 
         const loadedProducts = Array.isArray(parsed && parsed.products)
           ? alignProductsWithCategories(parsed.products)
@@ -2967,6 +3050,8 @@
         renderCollections();
         renderFilterChips();
         renderProducts();
+        // initialize promo slider after rendering collections/products
+        try { initPromoSlider(); } catch (e) { /* ignore init errors */ }
 
         state.cart = loadCart();
         if (dateInput) {
@@ -2979,6 +3064,108 @@
         updateNavStyle();
         bindEvents();
         applyRoute(getRouteFromHash() || "home", { scroll: false });
+      }
+
+      // Initialize promotional carousel built from `defaultCategories`.
+      function initPromoSlider() {
+        const container = document.getElementById('promo-slides');
+        const dots = document.getElementById('promo-dots');
+        const nextBtn = document.getElementById('promo-next');
+        const prevBtn = document.getElementById('promo-prev');
+        if (!container || !dots) return;
+
+        const items = Array.isArray(defaultCategories) ? defaultCategories : [];
+        if (items.length === 0) {
+          container.innerHTML = "";
+          return;
+        }
+
+        container.innerHTML = '';
+        dots.innerHTML = '';
+
+        items.forEach((cat, idx) => {
+          const slide = document.createElement('div');
+          slide.className = 'promo-slide absolute inset-0 opacity-0 transition-opacity duration-700 bg-center bg-cover bg-no-repeat';
+          slide.dataset.index = idx;
+          if (idx === 0) slide.classList.add('opacity-100', 'z-10');
+
+          const title = cat.title || cat.name || '';
+          const image = cat.image || '';
+          const name = cat.name || '';
+
+          if (image) {
+            // set full-cover background
+            slide.style.backgroundImage = 'url("' + image.replace(/"/g, '\\"') + '")';
+          }
+
+          slide.innerHTML = '<div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/30"></div>'
+            + '<div class="absolute inset-0 flex items-center justify-center p-6 md:p-14">'
+            + '<div class="max-w-2xl text-center text-white">'
+            + '<div class="inline-block px-3 py-1 bg-[#c5a369] text-[#05070c] rounded-full font-semibold mb-3">20% OFF</div>'
+            + '<h3 class="font-display text-3xl md:text-5xl mb-3" style="font-family:\'Cormorant Garamond\', serif;">' + (title) + '</h3>'
+            + '<p class="text-sm md:text-base text-[#f6f2ea]/90 mb-6">' + (name) + '</p>'
+            + '<button type="button" class="promo-shop-btn inline-block bg-gradient-to-r from-[#ecd6a7] to-[#c5a369] text-[#05070c] font-semibold px-6 py-3 rounded-full shadow-lg ring-1 ring-[#c5a369]/20">Shop Collection</button>'
+            + '</div></div>';
+
+          container.appendChild(slide);
+
+          const dot = document.createElement('button');
+          dot.className = 'w-2 h-2 rounded-full bg-[#c5a369]/40 transition';
+          if (idx === 0) dot.classList.add('bg-[#c5a369]');
+          dot.dataset.index = idx;
+          dot.addEventListener('click', function () { showPromoSlide(parseInt(this.dataset.index, 10), true); });
+          dots.appendChild(dot);
+
+          // bind shop button to filter and navigate
+          const shopBtn = slide.querySelector('.promo-shop-btn');
+          if (shopBtn) {
+            shopBtn.addEventListener('click', function (e) {
+              e.preventDefault();
+              try { state.activeCategory = cat.id; } catch (err) {}
+              try { renderProducts(); } catch (err) {}
+              try { applyRoute('shop'); } catch (err) {}
+              window.location.hash = '#shop';
+            });
+          }
+        });
+
+        let current = 0;
+        let timer = null;
+
+        function updateDots() {
+          Array.from(dots.children).forEach((d, i) => d.classList.toggle('bg-[#c5a369]', i === current));
+        }
+
+        function showPromoSlide(index, stopAuto) {
+          const slides = Array.from(document.querySelectorAll('.promo-slide'));
+          if (!slides.length) return;
+          current = ((index % slides.length) + slides.length) % slides.length;
+          slides.forEach((s, i) => {
+            if (i === current) { s.classList.add('opacity-100', 'z-10'); s.classList.remove('opacity-0'); }
+            else { s.classList.remove('opacity-100', 'z-10'); s.classList.add('opacity-0'); }
+          });
+          updateDots();
+          if (stopAuto && timer) { clearInterval(timer); timer = null; }
+        }
+
+        function nextPromo() { showPromoSlide(current + 1); }
+        function prevPromo() { showPromoSlide(current - 1); }
+
+        function startPromo() { if (timer) clearInterval(timer); timer = setInterval(nextPromo, 3500); }
+        function stopPromo() { if (timer) { clearInterval(timer); timer = null; } }
+
+        if (nextBtn) nextBtn.addEventListener('click', () => { nextPromo(); stopPromo(); startPromo(); });
+        if (prevBtn) prevBtn.addEventListener('click', () => { prevPromo(); stopPromo(); startPromo(); });
+
+        container.addEventListener('mouseenter', stopPromo);
+        container.addEventListener('mouseleave', startPromo);
+
+        startPromo();
+
+        // expose for debugging/control
+        window.showPromoSlide = showPromoSlide;
+        window.startPromo = startPromo;
+        window.stopPromo = stopPromo;
       }
 
       init();
